@@ -123,7 +123,7 @@ Vercel settings: framework Astro, build `npm run build`, output `dist`. No env v
 
 - Upgrade Node (≥ 22.23.4) and Astro to latest 7.4.x (fixes a moderate advisory; not exploitable here — no dynamic tag names, no Node adapter).
 - Replace Unsplash placeholders with real photos (move to `src/assets` + `astro:assets` for optimization).
-- Real WhatsApp number in `site.json` (currently placeholder).
+- WhatsApp set to 573001248065 (shared with FotoSnap and Vending) on 2026-11-16.
 - Schema-validate `site.json`.
 - Daily rebuild (Vercel Deploy Hook + cron) so expired promos drop without a manual deploy.
 - Optional: Sveltia CMS in local mode for form-based editing.
