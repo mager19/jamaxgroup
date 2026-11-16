@@ -132,6 +132,16 @@
         ],
         "createdAt": "2026-11-16T20:20:18.046Z",
         "reason": "Pinned reference (land-book Stoa) draws a faint 12-column grid behind content"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument sans",
+        "files": [
+          "group/dist*/**",
+          "group/src/styles/global.css"
+        ],
+        "createdAt": "2026-11-16T20:44:31.651Z",
+        "reason": "Deliberate choice to match the pinned reference (land-book Stoa), a calm neutral grotesque; already replaced Inter Tight once"
       }
     ]
   }
