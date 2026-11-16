@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/styles/global.css"
+        ],
+        "createdAt": "2026-11-16T16:28:46.886Z",
+        "reason": "Project style guide: docs/design/style-guide.md (Floating Notification Card) specifies a left border accent in blue/red/amber to indicate status; ported unchanged from the adopted spike"
+      }
+    ]
+  }
+}
