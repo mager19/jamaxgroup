@@ -1,0 +1,33 @@
+---
+import content from '../data/content.json';
+import HeroCollage from './HeroCollage.astro';
+
+const { title, accent, lead } = content.hero;
+---
+<section id="inicio" class="hero bg-bone grid-lines" aria-labelledby="hero-title">
+  <div class="wrap grid">
+    <div class="copy">
+      <p class="label">Jamax Group · Medellín</p>
+      <h1 id="hero-title" class="h-xl">{title} <span class="accent">{accent}</span></h1>
+      <p class="lead">{lead}</p>
+      <a class="link-arrow" href="#negocios">Conoce los negocios <span aria-hidden="true">↓</span></a>
+    </div>
+    <HeroCollage />
+  </div>
+  <div class="wrap foot">
+    <span>Viajes · Fotos · Vending</span>
+    <span>jamaxgroup.com</span>
+  </div>
+</section>
+
+<style>
+  .hero { padding-block: clamp(56px, 8vw, 112px) 28px; }
+  .grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(24px, 4vw, 64px); align-items: center; }
+  .grid > * { min-width: 0; }
+  .copy { display: grid; gap: 28px; justify-items: start; }
+  .foot {
+    display: flex; justify-content: space-between; margin-top: clamp(48px, 7vw, 96px); padding-top: 16px;
+    border-top: 1px solid var(--line); font-family: var(--mono); font-size: 12px; color: var(--slate);
+  }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+</style>

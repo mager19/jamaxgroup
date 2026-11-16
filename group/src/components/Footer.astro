@@ -1,0 +1,29 @@
+---
+import content from '../data/content.json';
+import site from '../data/site.json';
+import Logo from './Logo.astro';
+
+const year = new Date().getFullYear();
+---
+<footer class="site-footer bg-bone-2">
+  <div class="wrap row">
+    <Logo />
+    <ul class="sites">
+      {content.businesses.map((b) => <li><a href={b.url} target="_blank" rel="noopener">{b.name}<span class="sr"> (se abre en una pestaña nueva)</span></a></li>)}
+    </ul>
+  </div>
+  <div class="wrap row legal">
+    <span>© {year} {site.brand} · {site.base}</span>
+    <a href={`mailto:${site.email}`}>{site.email}</a>
+  </div>
+</footer>
+
+<style>
+  .site-footer { padding-block: 48px 28px; }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .sites { display: flex; gap: 24px; flex-wrap: wrap; }
+  .sites a { text-decoration: none; }
+  .sites a:hover { color: var(--orange-ink); text-decoration: underline; }
+  .legal { margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 12px; color: var(--slate); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+</style>

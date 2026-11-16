@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Businesses from '../components/Businesses.astro';
+import Principles from '../components/Principles.astro';
+import Contact from '../components/Contact.astro';
+import site from '../data/site.json';
+import content from '../data/content.json';
+---
+<Base title={`${site.brand} · Viajes, impresión de fotos y máquinas dispensadoras`} description={content.hero.lead}>
+  <main>
+    <Hero />
+    <Businesses />
+    <Principles />
+    <Contact />
+  </main>
+</Base>

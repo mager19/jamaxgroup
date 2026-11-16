@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "title": "Negocios que operamos",
+    "accent": "de principio a fin.",
+    "lead": "Jamax Group reúne tres negocios: viajes, impresión de fotos y máquinas dispensadoras. Cada uno con su propio sitio y con nosotros detrás de la operación."
+  },
+  "businesses": [
+    {
+      "id": "travel",
+      "name": "JamaxTravel",
+      "url": "https://travel.jamaxgroup.com/",
+      "domain": "travel.jamaxgroup.com",
+      "title": "Viajes",
+      "line": "Planes de viaje nacionales e internacionales, con fechas y condiciones claras. Cotizas por WhatsApp.",
+      "for": "Para viajeros",
+      "tags": [
+        "Nacionales",
+        "Internacionales",
+        "Cotización por WhatsApp"
+      ],
+      "color": "#007bff",
+      "heroImage": {
+        "file": "negocios/travel-punta-cana.webp",
+        "alt": "Playa de arena blanca con palmeras y mar turquesa en Punta Cana."
+      },
+      "cardImage": {
+        "file": "negocios/travel-rio.webp",
+        "alt": "Vista aérea de Río de Janeiro con el Pan de Azúcar y la bahía."
+      },
+      "short": "Viajes"
+    },
+    {
+      "id": "fotosnap",
+      "name": "FotoSnap",
+      "url": "https://fotosnap.jamaxgroup.com/",
+      "domain": "fotosnap.jamaxgroup.com",
+      "title": "Impresión de fotos",
+      "line": "Un kiosco donde tus invitados imprimen sus fotos desde su propio teléfono. Sin apps y sin cuentas.",
+      "for": "Para eventos y centros comerciales",
+      "tags": [
+        "Pago por foto",
+        "Evento todo incluido",
+        "Centros comerciales"
+      ],
+      "color": "#ff6b6b",
+      "heroImage": {
+        "file": "negocios/fotosnap-boda.webp",
+        "alt": "Kiosco FotoSnap en una boda al aire libre con luces colgantes. Simulación con el vinilo propuesto."
+      },
+      "cardImage": {
+        "file": "negocios/fotosnap-centro-comercial.webp",
+        "alt": "Kiosco FotoSnap en el pasillo de un centro comercial. Simulación con el vinilo propuesto."
+      },
+      "short": "Fotos"
+    },
+    {
+      "id": "vending",
+      "name": "Jamax Vending",
+      "url": "https://vending.jamaxgroup.com/",
+      "domain": "vending.jamaxgroup.com",
+      "title": "Máquinas dispensadoras",
+      "line": "Snacks y bebidas frías 24/7 en tu conjunto o empresa. La instalación cuesta $0 y la copropiedad recibe el 5 % de la utilidad.",
+      "for": "Para conjuntos residenciales y oficinas",
+      "tags": [
+        "Instalación $0",
+        "Mantenimiento incluido",
+        "24/7"
+      ],
+      "color": "#a9d62a",
+      "heroImage": {
+        "file": "negocios/vending-porteria.webp",
+        "alt": "Máquina dispensadora negra con paneles verdes en el lobby de un conjunto."
+      },
+      "cardImage": {
+        "file": "negocios/vending-oficina.webp",
+        "alt": "Máquina dispensadora en la zona de café de una oficina con ventanales."
+      },
+      "short": "Vending"
+    }
+  ],
+  "principles": [
+    {
+      "title": "Operamos nosotros.",
+      "text": "Instalamos, surtimos y mantenemos nuestras propias máquinas y kioscos, y cada cotización de viaje la respondemos nosotros."
+    },
+    {
+      "title": "Atención directa.",
+      "text": "Hablas con nosotros por WhatsApp o por correo, y te responde alguien del equipo."
+    },
+    {
+      "title": "Claro desde el inicio.",
+      "text": "Cada sitio dice qué incluye, qué no y en qué condiciones. Lo que no podemos prometer, no lo prometemos."
+    }
+  ]
+}

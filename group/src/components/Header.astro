@@ -1,0 +1,23 @@
+---
+import Logo from './Logo.astro';
+---
+<header class="site-header">
+  <div class="wrap bar">
+    <Logo />
+    <nav aria-label="Principal">
+      <a href="/#negocios">Negocios</a>
+      <a class="hide-sm" href="/#como-trabajamos">Cómo trabajamos</a>
+      <a class="cta" href="/#contacto">Contacto <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header { position: sticky; top: 0; z-index: 20; background: rgb(244 242 238 / 0.9); backdrop-filter: blur(10px); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 68px; border-bottom: 1px solid var(--line); }
+  nav { display: flex; align-items: center; gap: 28px; font-size: 15px; }
+  nav a { text-decoration: none; }
+  nav a:hover { color: var(--orange-ink); }
+  .cta { padding-bottom: 3px; border-bottom: 1px solid currentColor; }
+  @media (max-width: 640px) { nav { gap: 18px; } nav .hide-sm { display: none; } }
+</style>

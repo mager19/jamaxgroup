@@ -83,6 +83,55 @@
         ],
         "createdAt": "2026-11-16T19:56:40.289Z",
         "reason": "Build output (gitignored). Static HTML scan cannot see padding from Astro scoped CSS (.wrap insets full-bleed sections; rule-separated lists use vertical padding); the rendered URL scan of / and /gracias/ reports no findings"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "group/dist*/**"
+        ],
+        "createdAt": "2026-11-16T20:14:17.895Z",
+        "reason": "Build output (gitignored). Static HTML scan cannot see padding from Astro scoped CSS"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "group/dist*/**",
+          "group/src/styles/global.css"
+        ],
+        "createdAt": "2026-11-16T20:14:42.820Z",
+        "reason": "Pinned reference (land-book Stoa) uses a warm bone background; owner chose this look and feel"
+      },
+      {
+        "rule": "hero-eyebrow-chip",
+        "value": "*",
+        "files": [
+          "group/dist*/**",
+          "group/src/components/Hero.astro"
+        ],
+        "createdAt": "2026-11-16T20:14:42.860Z",
+        "reason": "Pinned reference (land-book Stoa) uses small mono labels above headlines as its section system (01 / ...); owner chose this look and feel"
+      },
+      {
+        "rule": "numbered-section-labels",
+        "value": "*",
+        "files": [
+          "group/dist*/**",
+          "group/src/components/*.astro"
+        ],
+        "createdAt": "2026-11-16T20:20:18.011Z",
+        "reason": "Pinned reference (land-book Stoa) numbers its sections with mono labels (01 / ...)"
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          "group/dist*/**",
+          "group/src/styles/global.css"
+        ],
+        "createdAt": "2026-11-16T20:20:18.046Z",
+        "reason": "Pinned reference (land-book Stoa) draws a faint 12-column grid behind content"
       }
     ]
   }

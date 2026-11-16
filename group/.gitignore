@@ -1,0 +1,9 @@
+node_modules/
+dist/
+dist-ready/
+.astro/
+.vercel/
+.env*
+!.env.example
+.DS_Store
+docs/fotos-ia/

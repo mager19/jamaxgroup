@@ -1,0 +1,27 @@
+---
+import content from '../data/content.json';
+---
+<section id="como-trabajamos" class="section bg-bone grid-lines" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="label">02 / Cómo trabajamos</p>
+      <h2 id="how-title" class="h-lg">Lo que tienen <span class="accent">en común.</span></h2>
+    </div>
+    <ol class="list">
+      {content.principles.map((p) => (
+        <li>
+          <h3>{p.title}</h3>
+          <p>{p.text}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .list { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 56px); }
+  li { display: grid; gap: 14px; align-content: start; padding-top: 22px; border-top: 1px solid var(--ink); }
+  h3 { font-size: clamp(24px, 2.2vw, 30px); }
+  p { color: var(--slate); max-width: 36ch; }
+  @media (max-width: 820px) { .list { grid-template-columns: 1fr; } }
+</style>
