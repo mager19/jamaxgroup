@@ -35,3 +35,6 @@ Thumbs.db
 
 # Local agent tooling (generated per machine)
 .atl/
+
+# Superpowers execution scratch
+.superpowers/

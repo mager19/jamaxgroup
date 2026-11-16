@@ -11,6 +11,42 @@
         ],
         "createdAt": "2026-11-16T16:27:50.959Z",
         "reason": "Project style guide: travel/docs/design/style-guide.md (Floating Notification Card) specifies a left border accent in blue/red/amber to indicate status; ported unchanged from the adopted spike"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "kiosko/dist*/**"
+        ],
+        "createdAt": "2026-11-16T17:33:21.655Z",
+        "reason": "Build output (gitignored). Static HTML scan cannot see padding from Astro scoped CSS and clamp(); the rendered URL scan of the same pages reports no cramped-padding"
+      },
+      {
+        "rule": "hard-offset-shadow",
+        "value": "*",
+        "files": [
+          "kiosko/dist*/**"
+        ],
+        "createdAt": "2026-11-16T17:33:21.676Z",
+        "reason": "Build output; hard shadows are the kiosk's FOTO-POP Bento identity required by kiosko/docs/BRIEF.md §7"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "kiosko/dist*/**"
+        ],
+        "createdAt": "2026-11-16T17:33:21.696Z",
+        "reason": "Build output; Inter is the kiosk app's typeface required by kiosko/docs/BRIEF.md §7"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "kiosko/src/layouts/Base.astro"
+        ],
+        "createdAt": "2026-11-16T17:33:21.716Z",
+        "reason": "Inter is the kiosk app's typeface required by kiosko/docs/BRIEF.md §7"
       }
     ]
   }
