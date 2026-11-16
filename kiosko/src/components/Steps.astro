@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+import content from '../data/content.json';
+import { mediaItem, video } from '../lib/media';
+
+const sheet = mediaItem('capturas/hoja-impresa.png');
+---
+<section class="section how bg-paper" id="como-funciona" aria-labelledby="como-title">
+  <div class="wrap how-grid">
+    <div>
+      <h2 id="como-title">Del teléfono al papel</h2>
+      <p class="how-lead">La persona hace todo el recorrido sola, guiada por la pantalla.</p>
+      <ol class="steps">
+        {content.steps.map((s, i) => (
+          <li>
+            <span class="num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+    <figure class="how-visual" id="video">
+      <div class="screen">
+        <video id="hero-video" autoplay muted loop playsinline preload="metadata" poster={video.poster}
+          aria-label="Video del kiosco: escanear el QR, subir fotos, editarlas, elegir tamaño, pagar e imprimir">
+          <source src={video.file} type="video/mp4" />
+        </video>
+      </div>
+      <Image class="sheet" src={sheet.src} alt={sheet.alt} widths={[240, 480]} sizes="240px" />
+      <figcaption><strong>Lo que ves en la pantalla es lo que sale.</strong> La vista previa reproduce la hoja exacta que imprime el kiosco, con stickers y calendario, en papel fotográfico 10 × 15 cm.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<script>
+  const heroVideo = document.querySelector<HTMLVideoElement>('#hero-video');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Respect reduced motion: stay on the poster and let the visitor press play.
+  if (heroVideo && reduce) {
+    heroVideo.removeAttribute('autoplay');
+    heroVideo.pause();
+    heroVideo.controls = true;
+  }
+
+  // "Míralo en acción" (hero): restart the video and show it full screen (Esc or the native control closes it).
+  // Without full-screen support, scroll the video into view and play it from the start.
+  type IOSVideo = HTMLVideoElement & { webkitEnterFullscreen?: () => void };
+  document.querySelector('[data-play-video]')?.addEventListener('click', async (event) => {
+    if (!heroVideo) return;
+    event.preventDefault();
+    const v = heroVideo as IOSVideo;
+    v.currentTime = 0;
+    v.controls = true;
+    try {
+      if (v.requestFullscreen) await v.requestFullscreen();
+      else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+      else throw new Error('no fullscreen');
+    } catch {
+      v.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    v.play().catch(() => {});
+  });
+  heroVideo?.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement && !reduce) heroVideo.controls = false;
+  });
+</script>
+
+<style>
+  .how-grid { display: grid; grid-template-columns: 1fr 0.8fr; gap: clamp(40px, 7vw, 96px); align-items: start; }
+  .how-lead { font-size: 19px; color: var(--slate); margin: 16px 0 36px; }
+  .steps { list-style: none; }
+  .steps li { display: grid; grid-template-columns: 64px 1fr; gap: 16px; padding: 20px 0; border-top: 1.5px solid var(--line); }
+  .steps li:last-child { border-bottom: 1.5px solid var(--line); }
+  .num { font-family: var(--font-display); font-weight: 800; font-size: 30px; line-height: 1; color: var(--coral-ink); font-variant-numeric: tabular-nums; }
+  .steps h3 { font-size: 21px; }
+  .steps p { color: var(--slate); margin-top: 4px; font-size: 16px; max-width: 48ch; }
+
+  .how-visual { position: sticky; top: 100px; display: grid; grid-template-columns: 1fr 0.7fr; align-items: end; gap: 0; scroll-margin-top: 100px; }
+  .screen { grid-column: 1; grid-row: 1; aspect-ratio: 9 / 16; background: var(--navy); border: 10px solid var(--paper); border-radius: 26px; overflow: hidden; box-shadow: var(--shadow); }
+  .screen video { width: 100%; height: 100%; object-fit: cover; }
+  .how-visual :global(.sheet) { grid-column: 2; grid-row: 1; width: 120%; margin-left: -20%; margin-bottom: 24px; border: 10px solid var(--paper); box-shadow: var(--shadow); rotate: 4deg; z-index: 2; }
+  .how-visual figcaption { grid-column: 1 / -1; margin-top: 28px; color: var(--slate); font-size: 16px; }
+  .how-visual strong { display: block; font-family: var(--font-display); color: var(--navy); font-size: 22px; margin-bottom: 6px; }
+
+  @media (max-width: 900px) {
+    .how-grid { grid-template-columns: 1fr; }
+    .how-visual { position: static; max-width: 460px; }
+  }
+</style>

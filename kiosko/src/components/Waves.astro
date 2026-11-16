@@ -1,0 +1,19 @@
+---
+// The yellow / coral / navy waves with a film-strip dotted line, from the vinyl's base.
+// `bg` is the color of the section above, so the waves read as its lower edge.
+interface Props { bg?: string; }
+const { bg = 'var(--cream)' } = Astro.props;
+---
+<div class="waves" style={`background:${bg}`} aria-hidden="true">
+  <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+    <path d="M0 40 C 240 0 420 80 720 40 S 1200 0 1440 36 L1440 140 L0 140 Z" fill="#ffc857" />
+    <path d="M0 70 C 260 30 460 110 760 66 S 1220 30 1440 62 L1440 140 L0 140 Z" fill="#ff6b6b" />
+    <path d="M0 98 C 280 64 500 132 800 94 S 1240 66 1440 92 L1440 140 L0 140 Z" fill="#153b7a" />
+    <path d="M24 118 C 300 92 520 146 820 112 S 1250 90 1420 112" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 22" />
+  </svg>
+</div>
+
+<style>
+  .waves { line-height: 0; }
+  .waves svg { width: 100%; height: clamp(60px, 9vw, 120px); display: block; }
+</style>

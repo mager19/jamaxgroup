@@ -1,0 +1,12 @@
+---
+import { waLink } from '../lib/site';
+import WhatsAppIcon from './WhatsAppIcon.astro';
+
+// Hidden until a real number is configured, so it never links to a placeholder.
+const href = waLink();
+---
+{href && (
+  <a class="wa-float" href={href} target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp (se abre en una pestaña nueva)">
+    <WhatsAppIcon />
+  </a>
+)}

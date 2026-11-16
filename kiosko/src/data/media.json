@@ -1,0 +1,39 @@
+{
+  "note": "Every image used on the site must be listed here after a manual minor check. Blurred variants are edited copies of the originals in docs/capturas.",
+  "video": {
+    "file": "/video/vitrina.mp4",
+    "poster": "/video/vitrina-poster.webp",
+    "minorCheck": "clean",
+    "edit": "Cut 7.0–10.5 s (gallery with photos of children) and 30 s–end (welcome polaroids with children); 720 px wide, H.264, no audio."
+  },
+  "approved": [
+    {
+      "file": "capturas/k-calendario.png",
+      "minorCheck": "clean",
+      "alt": "Editor del kiosco: calendario sobre la foto con el día marcado con un corazón"
+    },
+    {
+      "file": "capturas/hoja-impresa.png",
+      "minorCheck": "clean",
+      "alt": "Hoja impresa real con la foto, stickers y calendario"
+    },
+    {
+      "file": "maquina/kiosco-marca-estudio.webp",
+      "minorCheck": "clean",
+      "alt": "El kiosco FotoSnap con el vinilo propuesto: cámara instantánea sobre la ranura de salida y ondas amarillas, coral y azul",
+      "edit": "AI-generated (Gemini) from the real photo IMG_0322 with the proposed vinyl; side photos are landscapes and a dog."
+    },
+    {
+      "file": "maquina/kiosco-marca-boda.webp",
+      "minorCheck": "clean",
+      "alt": "Simulación del kiosco FotoSnap con su vinilo en una boda al aire libre, con luces colgantes",
+      "edit": "AI-generated scene (Gemini) from the branded studio image; adult guests blurred in the background."
+    },
+    {
+      "file": "maquina/kiosco-marca-centro-comercial.webp",
+      "minorCheck": "clean",
+      "alt": "Simulación del kiosco FotoSnap con su vinilo en el pasillo de un centro comercial",
+      "edit": "AI-generated scene (Gemini) from the branded studio image; adult shoppers blurred in the background."
+    }
+  ]
+}

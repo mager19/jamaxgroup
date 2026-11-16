@@ -1,0 +1,143 @@
+/*
+ * FotoSnap landing. Brand: "Propuesta A · Nostalgia instantánea" (docs/Propuesta_Integrada_FotoSnap.pdf).
+ * Colors sampled from the PDF. See DESIGN.md. The branding is still being decided: change the
+ * tokens here and the whole site follows.
+ */
+:root {
+  --navy: #153b7a;        /* brand navy: headings, dark sections, outlines */
+  --text: #1f2d4d;        /* body text */
+  --slate: #4a5876;       /* secondary text (6.8:1 on cream) */
+  --cream: #fff9f0;       /* page canvas */
+  --paper: #ffffff;       /* cards, polaroids */
+  --yellow: #ffc857;      /* primary action background (navy text, 7:1) and waves */
+  --yellow-deep: #f5b733;
+  --coral: #ff6b6b;       /* decoration only: waves, hearts, swooshes, wordmark */
+  --coral-ink: #c93b3b;   /* coral for text (4.8:1 on cream) */
+  --blush: #ffe4dc;       /* soft coral surface */
+  --sun: #ffeab8;         /* soft yellow surface */
+  --peach: #f5c9a4;       /* camera print, accents */
+  --line: rgba(21, 59, 122, 0.14);
+  --field-line: #c9d1e1;  /* form field border */
+  --error: #b3261e;       /* error text and invalid field border */
+  --error-ink: #7a1c16;
+  --error-bg: #fff5f4;
+  --error-line: #e2b3ae;
+  --note-bg: #fff3b0;     /* visible placeholders and drafts */
+  --on-navy: #d3ddef;     /* body text on navy (8.9:1) */
+  --on-navy-strong: #e6ecf7;
+  --cabinet: #f1ede7;     /* lower tone of the white kiosk cabinet */
+  --cabinet-slot: #e2dcd3;
+
+  --border: 1.5px solid var(--line);
+  --shadow: 0 2px 4px rgba(21, 59, 122, 0.06), 0 14px 32px -12px rgba(21, 59, 122, 0.22);
+  --shadow-sm: 0 1px 2px rgba(21, 59, 122, 0.08), 0 8px 18px -10px rgba(21, 59, 122, 0.25);
+  --pill: 9999px;
+  --r-card: 28px;
+  --r-tile: 22px;
+
+  --font: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Montserrat', 'Nunito', system-ui, sans-serif;
+  --max: 1200px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --section: clamp(72px, 10vw, 128px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body {
+  font-family: var(--font);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, video { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+::selection { background: var(--yellow); color: var(--navy); }
+:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; color: var(--navy); text-wrap: balance; }
+h2 { font-size: clamp(34px, 5vw, 58px); }
+h3 { font-size: clamp(20px, 2vw, 23px); line-height: 1.2; }
+p, dd, li { text-wrap: pretty; }
+
+/* Brand emphasis: the second half of a headline in coral, like the vinyl copy. */
+.em { color: var(--coral-ink); }
+.on-navy .em { color: var(--yellow); }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+/* Sections alternate cream and white (navy for the machine) so no two neighbours share a background. */
+.bg-paper { background: var(--paper); }
+.section { padding: var(--section) 0; }
+.section-head { max-width: 760px; margin-bottom: clamp(32px, 5vw, 56px); }
+.section-head p { font-size: 19px; color: var(--slate); margin-top: 18px; max-width: 60ch; }
+.on-navy { background: var(--navy); color: var(--on-navy-strong); }
+.on-navy h1, .on-navy h2, .on-navy h3 { color: var(--paper); }
+.on-navy .section-head p { color: var(--on-navy); }
+
+/* Buttons: pill. Yellow with navy text = primary action. */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 14px 28px;
+  border: 2px solid transparent; border-radius: var(--pill);
+  font-family: var(--font-display); font-size: 16px; font-weight: 700; letter-spacing: 0.005em;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--yellow); color: var(--navy); box-shadow: var(--shadow-sm); }
+.btn-primary:hover { background: var(--yellow-deep); }
+.btn-ghost { background: var(--paper); color: var(--navy); border-color: var(--navy); }
+.btn-ghost:hover { background: var(--cream); }
+.btn[disabled], .btn[aria-disabled='true'] { background: #ece6db; color: var(--slate); box-shadow: none; cursor: not-allowed; transform: none; border-color: transparent; }
+
+.card { background: var(--paper); border: var(--border); border-radius: var(--r-card); box-shadow: var(--shadow); }
+.tile { border: var(--border); border-radius: var(--r-tile); }
+
+/* Polaroid frame used for photos. */
+.polaroid-frame { background: var(--paper); padding: 10px 10px 36px; box-shadow: var(--shadow); }
+
+/* Header */
+.site-header { position: sticky; top: 0; z-index: 40; background: rgba(255, 249, 240, .92); backdrop-filter: blur(10px); border-bottom: var(--border); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 72px; }
+.nav { display: flex; gap: 28px; font-size: 15px; font-weight: 700; color: var(--navy); }
+.nav a { text-decoration: none; }
+.nav a:hover { color: var(--coral-ink); }
+.site-header .btn { min-height: 44px; padding: 10px 20px; font-size: 15px; }
+
+/* Footer */
+.site-footer { background: var(--navy); color: var(--on-navy); padding: 8px 0 40px; font-size: 15px; }
+.site-footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
+.site-footer h3 { color: var(--paper); font-size: 15px; letter-spacing: 0; margin-bottom: 10px; }
+.site-footer p + p { margin-top: 6px; }
+.site-footer a { color: var(--paper); text-underline-offset: 3px; }
+.site-footer .legal { grid-column: 1 / -1; border-top: 1px solid rgba(255, 255, 255, .15); padding-top: 24px; font-size: 13px; color: #aebbd6; }
+
+/* Floating WhatsApp */
+.wa-float {
+  position: fixed; right: 20px; bottom: 20px; z-index: 50;
+  width: 60px; height: 60px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--yellow); color: var(--navy); box-shadow: var(--shadow);
+  transition: transform .15s ease;
+}
+.wa-float:hover { transform: translateY(-2px); }
+.wa-float svg { width: 28px; height: 28px; }
+
+@media (max-width: 900px) {
+  .nav { display: none; }
+  .site-footer .wrap { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .site-header .btn { padding: 10px 14px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

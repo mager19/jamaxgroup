@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title={`Aviso de privacidad — ${site.brand}`} description="Cómo tratamos los datos que envías en el formulario de solicitud de FotoSnap.">
+  <main class="section">
+    <div class="wrap legal">
+      <p class="draft" role="note">Borrador pendiente de revisión legal. [[POLÍTICA DE PRIVACIDAD DE LA LANDING]]</p>
+      <h1>Aviso de privacidad</h1>
+      <p>Este aviso aplica a los datos que envías en el formulario «Solicita tu kiosco» de este sitio. Es distinto del aviso que muestra el kiosco a quien imprime.</p>
+
+      <h2>Responsable</h2>
+      <p>[[RAZÓN SOCIAL]], NIT [[NIT]], responsable del servicio {site.brand}. Contacto: {site.email}.</p>
+
+      <h2>Qué datos recogemos</h2>
+      <p>Nombre, empresa u organización, correo, teléfono, tipo de servicio, tipo de evento, fecha, ciudad y el mensaje que escribas.</p>
+
+      <h2>Para qué los usamos</h2>
+      <p>Solo para responder tu solicitud, revisar disponibilidad y enviarte una propuesta. No los vendemos ni los compartimos con terceros para fines comerciales.</p>
+
+      <h2>Cómo se envían</h2>
+      <p>El formulario se entrega por correo electrónico a través de un servicio de envío de formularios.</p>
+
+      <h2>Tus derechos</h2>
+      <p>De acuerdo con la Ley 1581 de 2012, puedes conocer, actualizar, rectificar y pedir la eliminación de tus datos, y revocar tu autorización, escribiendo a {site.email}.</p>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .legal { max-width: 760px; }
+  .legal h1 { font-size: clamp(36px, 5vw, 56px); margin: 16px 0 20px; }
+  .legal h2 { font-size: 24px; margin: 32px 0 8px; }
+  .legal p { color: var(--text); }
+  .draft { display: inline-block; background: var(--note-bg); border: var(--border); border-radius: 14px; padding: 10px 14px; font-weight: 700; }
+</style>

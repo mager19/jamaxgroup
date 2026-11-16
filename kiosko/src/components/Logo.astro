@@ -1,0 +1,20 @@
+---
+import CameraMark from './CameraMark.astro';
+import site from '../data/site.json';
+
+interface Props { inverse?: boolean; }
+const { inverse = false } = Astro.props;
+---
+<a class:list={['logo', { inverse }]} href="/" aria-label={`${site.brand}, inicio`}>
+  <CameraMark size={26} />
+  <span class="word"><span class="foto">Foto</span><span class="snap">Snap</span></span>
+</a>
+
+<style>
+  .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+  .word { font-family: var(--font-display); font-weight: 800; font-size: 25px; letter-spacing: -0.02em; line-height: 1; position: relative; padding-bottom: 5px; }
+  .word::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; border-radius: 3px; background: var(--coral); }
+  .foto { color: var(--navy); }
+  .snap { color: var(--coral); }
+  .inverse .foto { color: var(--paper); }
+</style>

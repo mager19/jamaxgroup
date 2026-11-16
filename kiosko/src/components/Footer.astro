@@ -1,0 +1,31 @@
+---
+import site from '../data/site.json';
+import { isPlaceholder, waLink, whatsappNumber } from '../lib/site';
+import Logo from './Logo.astro';
+import Waves from './Waves.astro';
+
+const wa = waLink();
+const emailReady = !isPlaceholder(site.email);
+const phone = whatsappNumber().replace(/^57(\d{3})(\d{3})(\d{4})$/, '+57 $1 $2 $3');
+---
+<Waves />
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <Logo inverse />
+      <p style="margin-top:14px">Tus recuerdos merecen salir del celular. Un kiosco para imprimir fotos desde el teléfono, en eventos y centros comerciales.</p>
+      <p>{site.coverage}</p>
+    </div>
+    <div>
+      <h3>Contacto</h3>
+      <p>{emailReady ? <a href={`mailto:${site.email}`}>{site.email}</a> : site.email}</p>
+      <p>{wa ? <a href={wa} target="_blank" rel="noopener">WhatsApp {phone}</a> : site.whatsapp}</p>
+    </div>
+    <div>
+      <h3>Información</h3>
+      <p><a href="/#contacto">Solicita tu kiosco</a></p>
+      <p><a href="/privacidad/">Aviso de privacidad</a></p>
+    </div>
+    <p class="legal">{site.brand} es un servicio de {site.operator} · {new Date().getFullYear()}</p>
+  </div>
+</footer>

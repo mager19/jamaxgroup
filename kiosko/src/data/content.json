@@ -1,0 +1,184 @@
+{
+  "steps": [
+    {
+      "title": "Escanea el QR",
+      "text": "Toca la pantalla del kiosco y escanea el código con la cámara del teléfono. No hay nada que instalar."
+    },
+    {
+      "title": "Sube tus fotos",
+      "text": "Se abre una página web, no una app. Eliges las fotos de tu carrete y suben solas."
+    },
+    {
+      "title": "Aparecen al instante",
+      "text": "Las fotos llegan a la pantalla grande en cuanto terminan de subir."
+    },
+    {
+      "title": "Edítalas, si quieres",
+      "text": "Encuadre, giro, stickers de temporada, calendario y filtros, con el dedo y en la pantalla grande."
+    },
+    {
+      "title": "Elige tamaño y copias",
+      "text": "Cada formato dibuja la hoja que va a salir, a escala, con el total a la vista."
+    },
+    {
+      "title": "Paga desde tu teléfono y recoge tu foto",
+      "text": "El botón de pago aparece en tu mismo teléfono. Nadie toca dinero ni escribe datos en la pantalla."
+    }
+  ],
+  "modalities": [
+    {
+      "id": "evento-pago",
+      "title": "Evento — pago por foto",
+      "pitch": "Una atracción que no te cuesta operar.",
+      "details": "Alquilas el kiosco para tu evento y cada invitado paga sus propias fotos desde su teléfono.",
+      "includes": "Incluye transporte, instalación, 1 rollo de papel y una persona de apoyo durante el evento.",
+      "audience": "Bodas, eventos corporativos y ferias"
+    },
+    {
+      "id": "evento-incluido",
+      "title": "Evento — todo incluido",
+      "pitch": "El recuerdo que tus invitados se llevan a casa.",
+      "details": "Pagas un paquete y tus invitados imprimen sus fotos sin pagar nada durante el evento.",
+      "includes": "Incluye transporte, instalación, 1 rollo de papel y una persona de apoyo durante el evento.",
+      "audience": "Bodas, eventos corporativos y ferias"
+    },
+    {
+      "id": "centro-comercial",
+      "title": "Centro comercial",
+      "pitch": "Un ingreso fijo mensual por un espacio pequeño.",
+      "details": "Te pagamos un alquiler mensual por el espacio donde va el kiosco. La máquina, la operación y sus costos son nuestros: tus visitantes tienen un servicio nuevo que no tienes que operar.",
+      "audience": "Centros comerciales y locales"
+    }
+  ],
+  "benefits": [
+    {
+      "title": "Funciona sin personal al lado",
+      "text": "La persona hace todo el recorrido sola, con pasos guiados en la pantalla.",
+      "tone": "blush",
+      "wide": true
+    },
+    {
+      "title": "Cobra solo",
+      "text": "El pago ocurre en el teléfono de cada persona. Pago seguro con Wompi desde el teléfono.",
+      "tone": "paper"
+    },
+    {
+      "title": "Lo pagado se entrega",
+      "text": "Si el papel no sale, el pago y las fotos se conservan, y el personal lo resuelve con un vale de reimpresión o una devolución.",
+      "tone": "sun"
+    },
+    {
+      "title": "Se ajusta sin reiniciar",
+      "text": "Precios, formatos y herramientas se cambian desde un panel de operación, en cualquier momento.",
+      "tone": "paper",
+      "wide": true
+    },
+    {
+      "title": "Atrae sola",
+      "text": "Tras un minuto sin uso, la pantalla muestra un video que enseña cómo funciona.",
+      "tone": "navy",
+      "wide": true
+    },
+    {
+      "title": "Privacidad por diseño",
+      "text": "Fotos temporales, sin cuentas y sin datos personales guardados.",
+      "tone": "paper"
+    }
+  ],
+  "forPrinters": [
+    "No instala ninguna aplicación",
+    "No crea cuenta",
+    "Usa las fotos de su propio carrete",
+    "Ve en grande exactamente lo que va a salir",
+    "Paga con los medios que ya usa"
+  ],
+  "tools": [
+    {
+      "name": "Encuadre",
+      "text": "Recorta y acerca la foto sobre la hoja real."
+    },
+    {
+      "name": "Girar",
+      "text": "Gira la foto 90° con un toque."
+    },
+    {
+      "name": "Stickers de temporada",
+      "text": "Se arrastran con el dedo, se agrandan, se achican y se giran. Varios por foto."
+    },
+    {
+      "name": "Calendario",
+      "text": "El mes que quieras sobre la foto, con un día marcado con círculo o corazón, en cualquier esquina."
+    },
+    {
+      "name": "Filtros",
+      "text": "Blanco y negro, Sepia, Vívido, Cálido y Frío."
+    }
+  ],
+  "formats": [
+    {
+      "name": "Clásica 10 × 15 cm",
+      "text": "Vertical u horizontal, a sangre."
+    },
+    {
+      "name": "Documento 3 × 4 cm",
+      "text": "9 fotos por hoja."
+    },
+    {
+      "name": "Dúo 10 × 7,5 cm",
+      "text": "2 fotos por hoja, con línea de corte."
+    },
+    {
+      "name": "Separador 3 × 15 cm",
+      "text": "3 tiras de la misma foto por hoja."
+    }
+  ],
+  "seasons": [
+    {
+      "name": "Fin de año",
+      "stickers": 10,
+      "bg": "#c62828",
+      "panel": "#f8d7d4",
+      "action": "#5cb85c",
+      "accent": "#f47c6e"
+    },
+    {
+      "name": "Amor y amistad",
+      "stickers": 8,
+      "bg": "#c2185b",
+      "panel": "#fbd9e3",
+      "action": "#f06292",
+      "accent": "#ff8a65"
+    },
+    {
+      "name": "Vacaciones",
+      "stickers": 21,
+      "bg": "#0b7f92",
+      "panel": "#bfeef0",
+      "action": "#ffc93c",
+      "accent": "#ff8a5b"
+    }
+  ],
+  "security": [
+    {
+      "title": "Solo la pantalla del kiosco puede iniciar una sesión",
+      "text": "Desde fuera nadie puede manejar la máquina ni entorpecer su uso."
+    },
+    {
+      "title": "Cada sesión es de un solo teléfono",
+      "text": "El primer teléfono que escanea queda atado a la sesión. Si otro lo intenta, la persona frente al kiosco decide si lo deja entrar con un código."
+    },
+    {
+      "title": "El QR está firmado por la máquina y caduca",
+      "text": "Un enlace copiado o adivinado no sirve."
+    },
+    {
+      "title": "Mientras alguien usa la máquina, el QR desaparece de la pantalla",
+      "text": "En cuanto un teléfono toma la sesión, no queda nada que escanear."
+    }
+  ],
+  "privacy": [
+    "Tus fotos se borran al terminar la sesión y no guardamos ningún dato tuyo.",
+    "Sin cuentas, sin registro y sin datos de pago en el kiosco.",
+    "Única excepción: si alguien pagó y su foto no salió, sus fotos se conservan hasta 7 días para poder entregársela."
+  ]
+}

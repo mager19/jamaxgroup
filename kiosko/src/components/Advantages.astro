@@ -1,0 +1,74 @@
+---
+import content from '../data/content.json';
+---
+<section class="section advantages" id="ventajas" aria-labelledby="adv-title">
+  <div class="wrap">
+    <h2 id="adv-title">Por qué funciona sin nadie al lado</h2>
+    <div class="adv-grid">
+      <div>
+        <h3 class="col-title">Para ti</h3>
+        <div class="accordion">
+          {content.benefits.map((b, i) => (
+            <details open={i === 0}>
+              <summary>{b.title}</summary>
+              <p>{b.text}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+      <div>
+        <h3 class="col-title">Para quien imprime</h3>
+        <ul class="printer-list">
+          {content.forPrinters.map((item) => <li>{item}</li>)}
+        </ul>
+        <p class="tagline">Tus recuerdos merecen salir del celular.</p>
+      </div>
+    </div>
+
+    <div class="security on-navy" id="seguridad">
+      <h3>Segura en un lugar público</h3>
+      <ul class="sec-list">
+        {content.security.map((s) => (<li><strong>{s.title}.</strong> {s.text}</li>))}
+      </ul>
+      <ul class="privacy">
+        {content.privacy.map((p) => <li>{p}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .adv-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: clamp(40px, 7vw, 96px); margin-top: 40px; }
+  .col-title { font-size: 15px; text-transform: uppercase; letter-spacing: .08em; color: var(--coral-ink); margin-bottom: 8px; }
+  .accordion details { border-top: 1.5px solid var(--line); }
+  .accordion details:last-child { border-bottom: 1.5px solid var(--line); }
+  .accordion summary {
+    list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    min-height: 56px; padding: 14px 0; font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--navy);
+  }
+  .accordion summary::-webkit-details-marker { display: none; }
+  .accordion summary::after {
+    content: ""; flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; background: var(--sun)
+      no-repeat center / 14px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M7 1v12M1 7h12' stroke='%23153b7a' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E");
+    transition: transform .2s ease;
+  }
+  .accordion details[open] summary::after { transform: rotate(45deg); }
+  .accordion summary:hover { color: var(--coral-ink); }
+  .accordion summary:focus-visible { outline: 3px solid var(--navy); outline-offset: 4px; border-radius: 8px; }
+  .accordion p { color: var(--slate); font-size: 16px; padding: 0 46px 18px 0; max-width: 60ch; }
+  .printer-list { list-style: none; }
+  .printer-list li { padding: 14px 0; border-top: 1.5px solid var(--line); font-weight: 700; color: var(--navy); }
+  .tagline { margin-top: 28px; font-family: var(--font-display); font-weight: 800; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.15; color: var(--coral-ink); }
+
+  .security { margin-top: clamp(56px, 8vw, 96px); border-radius: var(--r-card); padding: clamp(28px, 4vw, 48px); }
+  .security h3 { font-size: clamp(26px, 3vw, 34px); color: var(--paper); }
+  .sec-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 40px; margin: 24px 0; }
+  .sec-list li { padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, .2); color: var(--on-navy); }
+  .sec-list strong { color: var(--paper); font-family: var(--font-display); }
+  .privacy { padding-left: 20px; display: grid; gap: 6px; color: var(--sun); font-size: 15px; }
+
+  @media (max-width: 900px) {
+    .adv-grid { grid-template-columns: 1fr; }
+    .sec-list { grid-template-columns: 1fr; }
+  }
+</style>

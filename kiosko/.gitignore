@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+.env*
+.DS_Store
+dist-ready/
+
+# Raw source material (public repo): screenshots and video with children, home photos,
+# undecided branding. The site uses the reviewed copies in src/assets and public/.
+docs/capturas/
+docs/fotos/
+docs/fotos-producto/
+docs/video/
+docs/*.pdf

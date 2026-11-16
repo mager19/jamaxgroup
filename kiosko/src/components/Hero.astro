@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import { mediaItem } from '../lib/media';
+
+const machine = mediaItem('maquina/kiosco-marca-estudio.webp');
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1 id="hero-title">Tus invitados imprimen sus fotos <span class="em">desde su propio teléfono.</span></h1>
+      <p class="hero-lead">FotoSnap es un kiosco de impresión de fotos para eventos y centros comerciales. Escanea, elige, paga y llévatela. Sin apps, sin cuentas y sin personal al lado.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contacto">Solicita tu kiosco</a>
+        <a class="btn btn-ghost" href="#video" data-play-video aria-controls="hero-video">Míralo en acción</a>
+      </div>
+    </div>
+    <figure class="hero-machine">
+      <Image src={machine.src} alt={machine.alt} widths={[420, 825]} sizes="(max-width: 900px) 80vw, 420px" loading="eager" fetchpriority="high" />
+      <figcaption>Simulación con el vinilo propuesto.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .hero { padding: clamp(40px, 6vw, 80px) 0 clamp(56px, 8vw, 104px); overflow: hidden; }
+  .hero-grid > * { min-width: 0; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero h1 { font-size: clamp(38px, 5.4vw, 70px); line-height: 1.04; }
+  .hero-lead { font-size: clamp(18px, 1.8vw, 21px); color: var(--slate); margin: 30px 0 36px; max-width: 42ch; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .hero-machine { justify-self: center; width: min(440px, 100%); }
+  .hero-machine :global(img) { width: 100%; height: auto; border-radius: var(--r-card); box-shadow: var(--shadow); }
+  .hero-machine figcaption { margin-top: 10px; font-size: 13px; color: var(--slate); text-align: right; }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-machine { width: min(380px, 100%); }
+  }
+  @media (max-width: 480px) {
+    .hero-ctas .btn { flex: 1 1 100%; }
+  }
+</style>

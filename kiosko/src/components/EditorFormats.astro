@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets';
+import content from '../data/content.json';
+import { mediaItem } from '../lib/media';
+
+const calendar = mediaItem('capturas/k-calendario.png');
+---
+<section class="section editor bg-paper" id="editor" aria-labelledby="ed-title">
+  <div class="wrap ed-grid">
+    <Image class="ed-shot" src={calendar.src} alt={calendar.alt} widths={[340, 680]} sizes="(max-width: 900px) 70vw, 340px" />
+    <div>
+      <h2 id="ed-title">Un editor en la pantalla grande</h2>
+      <p class="ed-lead">Todo es opcional y se usa con un dedo, de pie frente a la pantalla vertical táctil de 32".</p>
+      <div class="ed-cols">
+        <div>
+          <h3 class="col-title">Herramientas</h3>
+          <dl class="list">
+            {content.tools.map((t) => (<div><dt>{t.name}</dt><dd>{t.text}</dd></div>))}
+          </dl>
+        </div>
+        <div>
+          <h3 class="col-title">Formatos</h3>
+          <dl class="list">
+            {content.formats.map((f) => (<div><dt>{f.name}</dt><dd>{f.text}</dd></div>))}
+          </dl>
+          <p class="fmt-note">Papel fotográfico 10 × 15 cm, con precios configurables desde el panel de operación. Cada formato se puede pausar.</p>
+        </div>
+      </div>
+
+      <div class="seasons" id="temporadas">
+        <h3>Se viste para cada temporada</h3>
+        <p>Además del tema normal, el panel activa un tema de temporada: cambian los colores de las pantallas y aparecen stickers propios, que sí van en la foto.</p>
+        <ul>
+          {content.seasons.map((s) => (
+            <li>
+              <span class="swatch" aria-hidden="true"><i style={`background:${s.bg}`}></i><i style={`background:${s.action}`}></i><i style={`background:${s.accent}`}></i></span>
+              <span><strong>{s.name}</strong> · {s.stickers} stickers</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ed-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: clamp(40px, 7vw, 96px); align-items: start; }
+  .editor :global(.ed-shot) { width: 100%; border-radius: 20px; box-shadow: var(--shadow); position: sticky; top: 110px; }
+  .ed-lead { font-size: 19px; color: var(--slate); margin: 16px 0 32px; }
+  .ed-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .col-title { font-size: 15px; text-transform: uppercase; letter-spacing: .08em; color: var(--coral-ink); margin-bottom: 8px; }
+  .list div { padding: 14px 0; border-top: 1.5px solid var(--line); }
+  .list dt { font-family: var(--font-display); font-weight: 700; font-size: 17px; color: var(--navy); }
+  .list dd { color: var(--slate); font-size: 15px; margin-top: 2px; }
+  .fmt-note { margin-top: 16px; font-size: 14px; color: var(--slate); }
+  .seasons { margin-top: 48px; padding: 28px; background: var(--cream); border-radius: var(--r-tile); box-shadow: var(--shadow-sm); }
+  .seasons h3 { font-size: 22px; }
+  .seasons p { color: var(--slate); margin: 8px 0 18px; font-size: 16px; }
+  .seasons ul { list-style: none; display: flex; flex-wrap: wrap; gap: 12px 28px; }
+  .seasons li { display: flex; align-items: center; gap: 10px; color: var(--navy); }
+  .swatch { display: inline-flex; }
+  .swatch i { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--paper); margin-left: -5px; box-shadow: 0 0 0 1px var(--line); }
+  .swatch i:first-child { margin-left: 0; }
+  @media (max-width: 900px) {
+    .ed-grid { grid-template-columns: 1fr; }
+    .editor :global(.ed-shot) { position: static; max-width: 340px; }
+  }
+  @media (max-width: 600px) { .ed-cols { grid-template-columns: 1fr; } }
+</style>

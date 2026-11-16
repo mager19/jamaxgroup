@@ -1,0 +1,52 @@
+---
+import content from '../data/content.json';
+import site from '../data/site.json';
+
+const whoPays: Record<string, string> = {
+  'evento-pago': 'Cada invitado, desde su teléfono',
+  'evento-incluido': 'Tú, con un paquete',
+  'centro-comercial': 'Cada visitante, desde su teléfono',
+};
+---
+<section class="section modalities bg-paper" id="modalidades" aria-labelledby="mod-title">
+  <div class="wrap">
+    <h2 id="mod-title">Tres formas de tenerlo</h2>
+    <p class="mod-lead">En todas, la máquina es nuestra y la llevamos funcionando. {site.coverage}</p>
+    <div class="mod-panel">
+      {content.modalities.map((m) => (
+        <article class="mod">
+          <h3>{m.title}</h3>
+          <p class="pitch">{m.pitch}</p>
+          <p class="details">{m.details}</p>
+          <dl>
+            <div><dt>Quién paga las fotos</dt><dd>{whoPays[m.id]}</dd></div>
+            <div><dt>Para</dt><dd>{m.audience}</dd></div>
+          </dl>
+          {m.includes && <p class="includes">{m.includes}</p>}
+        </article>
+      ))}
+    </div>
+    <div class="mod-cta">
+      <a class="btn btn-primary" href="#contacto">Solicita tu kiosco</a>
+      <p>Cada evento y cada espacio se cotiza según lo que necesitas.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .mod-lead { font-size: 19px; color: var(--slate); margin: 16px 0 40px; max-width: 60ch; }
+  .mod-panel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--line); border-radius: var(--r-card); box-shadow: var(--shadow); overflow: hidden; }
+  .mod { background: var(--paper); padding: 34px 30px; display: flex; flex-direction: column; gap: 12px; }
+  .mod h3 { font-size: 24px; }
+  .pitch { font-family: var(--font-display); font-weight: 700; font-size: 18px; line-height: 1.3; color: var(--coral-ink); }
+  .details { font-size: 16px; color: var(--text); }
+  .mod dl { display: grid; gap: 10px; margin-top: 6px; }
+  .mod dt { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--slate); }
+  .mod dd { font-weight: 700; color: var(--navy); }
+  .includes { margin-top: auto; padding: 14px 16px; background: var(--sun); border-radius: 14px; font-size: 15px; font-weight: 700; color: var(--navy); }
+  .mod-cta { margin-top: 36px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .mod-cta p { color: var(--slate); font-size: 15px; }
+  @media (max-width: 960px) {
+    .mod-panel { grid-template-columns: 1fr; }
+  }
+</style>

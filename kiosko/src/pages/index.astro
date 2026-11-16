@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Steps from '../components/Steps.astro';
+import Machine from '../components/Machine.astro';
+import Modalities from '../components/Modalities.astro';
+import Advantages from '../components/Advantages.astro';
+import EditorFormats from '../components/EditorFormats.astro';
+import ContactForm from '../components/ContactForm.astro';
+import site from '../data/site.json';
+---
+<Base
+  title={`${site.brand} — Kiosco de impresión de fotos para eventos y centros comerciales`}
+  description="Tus invitados imprimen sus fotos desde su propio teléfono: escanean, eligen, pagan y se las llevan. Solicita un kiosco para tu evento o centro comercial en Medellín."
+>
+  <main id="inicio">
+    <Hero />
+    <Steps />
+    <Machine />
+    <Modalities />
+    <Advantages />
+    <EditorFormats />
+    <ContactForm />
+  </main>
+</Base>

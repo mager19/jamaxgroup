@@ -1,0 +1,54 @@
+---
+import Logo from './Logo.astro';
+
+const links = [
+  { href: '/#como-funciona', label: 'Cómo funciona' },
+  { href: '/#la-maquina', label: 'La máquina' },
+  { href: '/#modalidades', label: 'Modalidades' },
+  { href: '/#contacto', label: 'Contacto' },
+];
+---
+<header class="site-header">
+  <div class="wrap">
+    <Logo />
+    <nav class="nav" aria-label="Principal">
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-primary" href="/#contacto">Solicita tu kiosco</a>
+      <details class="menu">
+        <summary aria-label="Abrir menú">Menú</summary>
+        <nav aria-label="Menú móvil">
+          {links.map((l) => <a href={l.href}>{l.label}</a>)}
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Close the mobile menu after choosing a link.
+  document.querySelectorAll<HTMLAnchorElement>('.menu nav a').forEach((a) =>
+    a.addEventListener('click', () => a.closest('details')?.removeAttribute('open')),
+  );
+</script>
+
+<style>
+  .header-actions { display: flex; align-items: center; gap: 10px; }
+  .menu { display: none; position: relative; }
+  .menu summary {
+    list-style: none; cursor: pointer; min-height: 44px; display: grid; place-items: center;
+    padding: 0 16px; border-radius: var(--pill); border: 2px solid var(--navy);
+    font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--navy);
+  }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu[open] summary { background: var(--navy); color: var(--paper); }
+  .menu nav {
+    position: absolute; right: 0; top: calc(100% + 10px); min-width: 220px; display: grid;
+    background: var(--paper); border: var(--border); border-radius: 18px; box-shadow: var(--shadow); padding: 8px;
+  }
+  .menu nav a { padding: 12px 14px; border-radius: 12px; text-decoration: none; font-weight: 700; color: var(--navy); }
+  .menu nav a:hover { background: var(--cream); }
+  @media (max-width: 900px) { .menu { display: block; } }
+  @media (max-width: 420px) { .header-actions .btn { display: none; } }
+</style>

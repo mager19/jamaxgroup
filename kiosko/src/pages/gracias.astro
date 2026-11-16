@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title={`Solicitud recibida — ${site.brand}`} description="Recibimos tu solicitud de kiosco FotoSnap.">
+  <main class="section">
+    <div class="wrap">
+      <div class="card thanks">
+        <h1>Recibimos tu solicitud. Te contactaremos pronto.</h1>
+        <p>Gracias por escribirnos. Revisaremos la fecha y te responderemos por correo o por teléfono.</p>
+        <a class="btn btn-ghost" href="/">Volver al inicio</a>
+      </div>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .thanks { max-width: 720px; padding: clamp(28px, 5vw, 56px); background: var(--blush); display: grid; gap: 20px; justify-items: start; }
+  .thanks h1 { font-size: clamp(32px, 5vw, 52px); }
+  .thanks p { font-size: 19px; }
+</style>

@@ -1,0 +1,80 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "dist*/**"
+        ],
+        "createdAt": "2026-11-16T17:37:39.988Z",
+        "reason": "Build output (gitignored). Static HTML scan cannot see padding from Astro scoped CSS and clamp(); the rendered URL scan of the same pages reports no cramped-padding"
+      },
+      {
+        "rule": "hard-offset-shadow",
+        "value": "*",
+        "files": [
+          "dist*/**"
+        ],
+        "createdAt": "2026-11-16T17:37:40.018Z",
+        "reason": "Build output; hard shadows are the kiosk's FOTO-POP Bento identity required by docs/BRIEF.md §7"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "dist*/**"
+        ],
+        "createdAt": "2026-11-16T17:37:40.048Z",
+        "reason": "Build output; Inter is the kiosk app's typeface required by docs/BRIEF.md §7"
+      },
+      {
+        "rule": "overused-font",
+        "value": "*",
+        "files": [
+          "src/layouts/Base.astro"
+        ],
+        "createdAt": "2026-11-16T17:37:40.074Z",
+        "reason": "Inter is the kiosk app's typeface required by docs/BRIEF.md §7"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "dist*/**"
+        ],
+        "createdAt": "2026-11-16T17:59:16.427Z",
+        "reason": "Build output; #fff9f0 is the canvas sampled from the owner's branding PDF (docs/Propuesta_Integrada_FotoSnap.pdf), chosen by the owner"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "dist*/**"
+        ],
+        "createdAt": "2026-11-16T17:59:16.457Z",
+        "reason": "Build output; the only hit is the coral 'Snap' of the FotoSnap logotype (logotypes are exempt from WCAG 1.4.3); text uses --coral-ink"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "dist*/**"
+        ],
+        "createdAt": "2026-11-16T18:29:25.204Z",
+        "reason": "Only hit is the 3px coral underline under the FotoSnap wordmark (Logo.astro .word::after), part of the logo in the owner's branding PDF; not a card accent"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/components/Logo.astro"
+        ],
+        "createdAt": "2026-11-16T18:29:25.227Z",
+        "reason": "Wordmark underline from the owner's branding PDF (docs/Propuesta_Integrada_FotoSnap.pdf); not a card accent"
+      }
+    ]
+  }
+}

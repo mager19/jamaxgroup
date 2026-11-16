@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import { mediaItem } from '../lib/media';
+
+const scenes = [
+  { ...mediaItem('maquina/kiosco-marca-boda.webp'), label: 'Así se verá en una boda' },
+  { ...mediaItem('maquina/kiosco-marca-centro-comercial.webp'), label: 'Así se verá en un centro comercial' },
+];
+const specs = [
+  ['Pantalla', 'Vertical, táctil, de 32 pulgadas. Se usa de pie y con un dedo.'],
+  ['Impresión', 'Impresora fotográfica de sublimación dentro del mueble, papel 10 × 15 cm.'],
+  ['Entrega', 'La foto sale por la ranura del frente. El pedido solo se da por entregado cuando la impresora confirma la hoja.'],
+  ['Personal', 'No necesita a nadie al lado: la persona hace todo el recorrido sola.'],
+];
+---
+<section class="section machine on-navy" id="la-maquina" aria-labelledby="mq-title">
+  <div class="wrap">
+    <h2 id="mq-title">Así es la máquina</h2>
+    <dl class="specs">
+      {specs.map(([k, v]) => (<div><dt>{k}</dt><dd>{v}</dd></div>))}
+    </dl>
+    <div class="mq-scenes">
+      {scenes.map((s) => (
+        <figure>
+          <Image src={s.src} alt={s.alt} widths={[420, 825]} sizes="(max-width: 700px) 92vw, 45vw" />
+          <figcaption><strong>{s.label}.</strong> Simulación con el vinilo propuesto; el diseño final todavía se está definiendo.</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .specs { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(32px, 5vw, 64px); }
+  .specs div { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 16px 0; border-top: 1px solid rgba(255, 255, 255, .18); }
+  .specs dt { font-family: var(--font-display); font-weight: 700; color: var(--yellow); }
+  .specs dd { color: var(--on-navy-strong); }
+  .mq-scenes { margin-top: clamp(48px, 7vw, 88px); display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .mq-scenes :global(img) { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 22px; }
+  .mq-scenes figcaption { margin-top: 12px; font-size: 15px; color: var(--on-navy); }
+  .mq-scenes strong { color: var(--paper); font-family: var(--font-display); }
+  @media (max-width: 900px) { .specs { grid-template-columns: 1fr; } }
+  @media (max-width: 700px) { .mq-scenes { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) { .specs div { grid-template-columns: 1fr; gap: 2px; } }
+</style>
