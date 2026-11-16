@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title={`Aviso de privacidad — ${site.brand}`} description={`Cómo tratamos los datos que envía en el formulario de ${site.brand}.`}>
+  <main>
+    <section class="section bg-paper">
+      <div class="wrap legal">
+        <p class="draft" role="note">Borrador pendiente de revisión legal. [[POLÍTICA DE PRIVACIDAD DE LA LANDING]]</p>
+        <h1 class="display h-lg">Aviso de privacidad</h1>
+        <p>Este aviso aplica a los datos que envía en el formulario de solicitud de este sitio.</p>
+
+        <h2>Responsable</h2>
+        <p>[[RAZÓN SOCIAL]], NIT [[NIT]], que opera el servicio {site.brand}. Contacto: {site.email}.</p>
+
+        <h2>Qué datos recogemos</h2>
+        <p>Nombre, cargo, tipo de lugar, nombre del conjunto o empresa, municipio, número de apartamentos o personas, teléfono, correo y el mensaje que escriba.</p>
+
+        <h2>Para qué los usamos</h2>
+        <p>Solo para responder su solicitud, coordinar una visita y enviarle la propuesta de acuerdo. No los vendemos ni los compartimos con terceros para fines comerciales.</p>
+
+        <h2>Cómo se envían</h2>
+        <p>El formulario se entrega por correo electrónico a través de un servicio de envío de formularios.</p>
+
+        <h2>Sus derechos</h2>
+        <p>De acuerdo con la Ley 1581 de 2012, puede conocer, actualizar, rectificar y pedir la eliminación de sus datos, y revocar su autorización, escribiendo a {site.email}.</p>
+      </div>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .legal { max-width: 760px; }
+  .legal h1 { margin: 20px 0 24px; }
+  .legal h2 { font-size: 22px; margin: 32px 0 8px; }
+  .draft { display: inline-block; background: var(--mist); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; font-weight: 700; }
+</style>

@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base title={`Solicitud recibida — ${site.brand}`} description="Recibimos su solicitud de máquina dispensadora.">
+  <main>
+    <section class="section on-ink">
+      <div class="wrap thanks">
+        <h1 class="display h-lg">Recibimos su <span class="hl">solicitud.</span></h1>
+        <p class="lead muted">Gracias por escribirnos. Lo contactaremos por teléfono o correo para coordinar una visita al espacio.</p>
+        <a class="btn btn-primary" href="/">Volver al inicio</a>
+      </div>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .thanks { display: grid; gap: 26px; justify-items: start; min-height: 46vh; align-content: center; }
+</style>

@@ -1,0 +1,23 @@
+---
+import site from '../data/site.json';
+---
+<a class="logo" href="/" aria-label={`${site.brand}, inicio`}>
+  <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+    <rect width="32" height="32" rx="8" fill="currentColor" />
+    <rect x="7.5" y="6" width="11.5" height="20" rx="1.5" fill="none" stroke="var(--logo-on, #fff)" stroke-width="2" />
+    <path d="M9.5 11h7.5M9.5 15.5h7.5M9.5 20h7.5" stroke="var(--logo-on, #fff)" stroke-width="1.6" />
+    <rect x="21" y="6" width="4" height="20" rx="1" fill="#c3ef3f" />
+  </svg>
+  <span class="word">Jamax <b>Vending</b></span>
+</a>
+
+<style>
+  .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+  .mark { width: 34px; height: 34px; flex: none; }
+  .word {
+    font-weight: 600; font-size: 19px; letter-spacing: -0.01em; text-transform: uppercase;
+    font-variation-settings: 'wdth' 112;
+  }
+  .word b { font-weight: 850; }
+  :global(.on-ink) .logo { color: var(--on-ink); --logo-on: var(--ink); }
+</style>

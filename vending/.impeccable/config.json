@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "dist*/**"
+        ],
+        "createdAt": "2026-11-16T19:56:43.852Z",
+        "reason": "Build output (gitignored). Static HTML scan cannot see padding from Astro scoped CSS; rendered URL scan reports no findings"
+      }
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "hero": {
+    "title": [
+      "Su portería",
+      "ahora es",
+      "tienda"
+    ],
+    "lead": "Instalamos y operamos una máquina de snacks y bebidas frías en su conjunto. La instalación cuesta $0, nosotros nos encargamos de todo y la copropiedad recibe cada mes el 5 % de la utilidad."
+  },
+  "steps": [
+    {
+      "title": "Instalamos",
+      "text": "Llevamos la máquina, la instalamos en el espacio acordado y firmamos el acta de entrega. Sin costo para la copropiedad."
+    },
+    {
+      "title": "Operamos",
+      "text": "Surtimos, controlamos fechas de vencimiento, limpiamos y hacemos el mantenimiento. La telemetría nos avisa qué falta."
+    },
+    {
+      "title": "Usted recibe",
+      "text": "En los primeros 10 días hábiles de cada mes le entregamos la liquidación y pagamos dentro de los 5 días hábiles siguientes."
+    }
+  ],
+  "numbers": [
+    {
+      "value": "$0",
+      "label": "de instalación",
+      "condition": "Transporte, instalación y mantenimiento corren por nuestra cuenta."
+    },
+    {
+      "value": "5 %",
+      "label": "de la utilidad",
+      "condition": "Utilidad operacional del mes. Si no hay utilidad, no hay pago ese mes y la pérdida no se acumula."
+    },
+    {
+      "value": "10 kWh",
+      "label": "de energía pagada",
+      "condition": "Cada mes pagamos 10 kWh a la tarifa que paga la copropiedad."
+    },
+    {
+      "value": "24 horas",
+      "label": "para atender reportes",
+      "condition": "Acusamos recibo, diagnosticamos y empezamos la gestión en máximo 24 horas."
+    }
+  ],
+  "machine": {
+    "name": "TCN 10G Plus",
+    "intro": "Una máquina de snacks y bebidas frías con pantalla táctil, pensada para lugares de alto tráfico.",
+    "specs": [
+      {
+        "label": "Alto",
+        "value": "1,94 m"
+      },
+      {
+        "label": "Ancho",
+        "value": "1,18 m"
+      },
+      {
+        "label": "Capacidad",
+        "value": "Hasta 600 productos"
+      },
+      {
+        "label": "Selecciones",
+        "value": "Alrededor de 50"
+      },
+      {
+        "label": "Disponibilidad",
+        "value": "24 horas, 7 días"
+      },
+      {
+        "label": "Monitoreo",
+        "value": "Por telemetría"
+      }
+    ],
+    "payments": [
+      "Monedas",
+      "Billetes",
+      "Tarjeta",
+      "Pago con QR"
+    ],
+    "paymentsNote": "Los medios de pago dependen de la tecnología disponible en el equipo y de los operadores financieros.",
+    "products": [
+      "Snacks",
+      "Bebidas frías",
+      "Productos frescos",
+      "Opciones saludables"
+    ],
+    "productsNote": "El surtido se ajusta a lo que más se vende. Los residentes pueden sugerir productos."
+  },
+  "places": [
+    {
+      "id": "conjuntos",
+      "title": "Conjuntos residenciales",
+      "text": "En la portería o en una zona común. Los residentes compran a cualquier hora sin salir del conjunto, y la copropiedad recibe su participación cada mes."
+    },
+    {
+      "id": "empresas",
+      "title": "Oficinas y empresas",
+      "text": "En la zona de descanso. Su equipo tiene snacks y bebidas frías sin pedidos ni caja menor, y usted no administra nada."
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Cuánto le cuesta a la copropiedad?",
+      "a": "Nada. Nosotros asumimos el alistamiento, el transporte, la instalación y el mantenimiento preventivo y correctivo. La copropiedad presta el espacio y la toma eléctrica."
+    },
+    {
+      "q": "¿Cómo se calcula el 5 %?",
+      "a": "Es el 5 % de la utilidad operacional del mes: lo recaudado por ventas menos los costos directos de operar la máquina, como productos, comisiones de pago, surtido, conectividad y mantenimiento. Si ese mes no hay utilidad, no hay pago y la pérdida no se acumula para los meses siguientes."
+    },
+    {
+      "q": "¿Quién paga la energía?",
+      "a": "Nosotros. Cada mes pagamos a la copropiedad el valor de 10 kWh, calculado con la tarifa de su propia factura de energía, junto con la participación."
+    },
+    {
+      "q": "¿Cuánto dura el acuerdo?",
+      "a": "12 meses desde el acta de instalación, con renovación automática. Cualquiera de las partes puede terminarlo avisando por escrito con 30 días de anticipación."
+    },
+    {
+      "q": "¿Qué pasa si hay robo o vandalismo?",
+      "a": "La máquina, los productos y el dinero son nuestros, y asumimos el riesgo comercial de la operación. La copropiedad no responde automáticamente por daños de terceros; solo le pedimos avisarnos de inmediato y compartir las evidencias disponibles."
+    },
+    {
+      "q": "¿Quién define los productos y los precios?",
+      "a": "Nosotros, buscando precios razonables y variedad. La copropiedad y los residentes pueden sugerir productos y los evaluamos según la demanda."
+    },
+    {
+      "q": "¿Qué tiene que hacer la copropiedad?",
+      "a": "Prestar el espacio, dar acceso razonable a nuestro personal para surtir y hacer mantenimiento, mantener la toma eléctrica conectada y avisarnos de cualquier daño o novedad."
+    },
+    {
+      "q": "¿Cuánto tarda la instalación?",
+      "a": "Procuramos instalar en aproximadamente 8 días hábiles después de firmar, según la disponibilidad del equipo y del espacio."
+    }
+  ]
+}

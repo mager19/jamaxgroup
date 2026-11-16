@@ -1,0 +1,39 @@
+---
+import content from '../data/content.json';
+---
+<section id="numeros" class="section on-ink" aria-labelledby="numbers-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="numbers-title" class="display h-lg">Los números, <span class="hl">claros</span> desde el principio.</h2>
+      <p class="lead muted">Esto es lo que dice el acuerdo que firmamos con cada copropiedad. Sin letra pequeña escondida.</p>
+    </div>
+    <ul class="numbers">
+      {content.numbers.map((n) => (
+        <li>
+          <p class="value">{n.value}</p>
+          <p class="label">{n.label}</p>
+          <p class="muted cond">{n.condition}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .numbers { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid rgb(255 255 255 / 0.18); }
+  .numbers li {
+    display: grid; gap: 8px; align-content: start; padding: clamp(28px, 4vw, 48px) clamp(0px, 3vw, 40px) clamp(28px, 4vw, 48px) 0;
+    border-bottom: 1px solid rgb(255 255 255 / 0.18);
+  }
+  .numbers li:nth-child(even) { padding-left: clamp(20px, 3vw, 40px); border-left: 1px solid rgb(255 255 255 / 0.18); }
+  .value {
+    font-weight: 900; font-variation-settings: 'wdth' 120; font-size: clamp(52px, 7.2vw, 100px);
+    line-height: 0.85; letter-spacing: -0.04em; white-space: nowrap; color: var(--lime); font-variant-numeric: tabular-nums;
+  }
+  .label { font-weight: 700; font-size: clamp(18px, 1.8vw, 22px); text-transform: uppercase; letter-spacing: 0.02em; }
+  .cond { max-width: 44ch; }
+  @media (max-width: 720px) {
+    .numbers { grid-template-columns: 1fr; }
+    .numbers li:nth-child(even) { padding-left: 0; border-left: 0; }
+  }
+</style>

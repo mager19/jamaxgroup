@@ -1,0 +1,25 @@
+{
+  "_note": "AI-generated scenes from the distributor's product photo (owner, Nano Banana). Brand-legible products were blurred; only the TCN maker mark stays. Sources live in docs/fotos-ia (git-ignored).",
+  "approved": [
+    {
+      "file": "escenas/porteria.webp",
+      "alt": "Máquina dispensadora negra con paneles verdes junto a la pared de un lobby iluminado por el sol de la tarde.",
+      "brandCheck": "clean"
+    },
+    {
+      "file": "escenas/oficina.webp",
+      "alt": "Máquina dispensadora en la zona de café de una oficina con ventanales y plantas.",
+      "brandCheck": "clean"
+    },
+    {
+      "file": "escenas/pago-qr.webp",
+      "alt": "Mano que escanea con el celular el código QR que muestra la pantalla táctil de la máquina.",
+      "brandCheck": "clean"
+    },
+    {
+      "file": "escenas/maquina-estudio.webp",
+      "alt": "Máquina dispensadora TCN 10G Plus de frente, con seis bandejas de snacks y bebidas y la pantalla táctil a la derecha.",
+      "brandCheck": "clean"
+    }
+  ]
+}

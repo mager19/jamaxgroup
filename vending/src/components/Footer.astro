@@ -1,0 +1,40 @@
+---
+import site from '../data/site.json';
+import { waLink } from '../lib/site';
+import Logo from './Logo.astro';
+
+const wa = waLink();
+const year = new Date().getFullYear();
+---
+<footer class="site-footer on-ink">
+  <div class="wrap top">
+    <Logo />
+    <p class="muted">Máquinas dispensadoras de snacks y bebidas frías, operadas por {site.operator}. {site.coverage}</p>
+    <ul class="contact">
+      <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+      {wa && <li><a href={wa} target="_blank" rel="noopener">WhatsApp 300 124 8065</a></li>}
+      <li><a href="/privacidad/">Tratamiento de datos</a></li>
+    </ul>
+  </div>
+  <svg class="giant" viewBox="0 0 1000 200" aria-hidden="true" focusable="false">
+    <text x="0" y="178" textLength="1000" lengthAdjust="spacingAndGlyphs">VENDING</text>
+  </svg>
+  <div class="wrap legal muted">© {year} {site.operator}</div>
+</footer>
+
+<style>
+  .site-footer { padding-top: clamp(56px, 8vw, 96px); overflow: hidden; }
+  .top { display: grid; grid-template-columns: auto 1fr auto; gap: 32px 48px; align-items: start; }
+  .top p { max-width: 46ch; }
+  .contact { display: grid; gap: 10px; font-weight: 600; }
+  .contact a { text-decoration: none; }
+  .contact a:hover { color: var(--lime); text-decoration: underline; }
+  /* SVG text with textLength always spans the full width, whatever the viewport. */
+  .giant { display: block; width: calc(100% - 2 * var(--gutter)); margin: clamp(40px, 6vw, 72px) auto 0; user-select: none; }
+  .giant text {
+    font-family: var(--font); font-weight: 900; font-variation-settings: 'wdth' 125;
+    font-size: 228px; fill: var(--lime);
+  }
+  .legal { padding: 20px 0 28px; font-size: 14px; }
+  @media (max-width: 860px) { .top { grid-template-columns: 1fr; } }
+</style>

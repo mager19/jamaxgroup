@@ -74,6 +74,15 @@
         ],
         "createdAt": "2026-11-16T18:30:51.250Z",
         "reason": "Build output; only hit is the wordmark underline from the owner's branding PDF"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "vending/dist*/**"
+        ],
+        "createdAt": "2026-11-16T19:56:40.289Z",
+        "reason": "Build output (gitignored). Static HTML scan cannot see padding from Astro scoped CSS (.wrap insets full-bleed sections; rule-separated lists use vertical padding); the rendered URL scan of / and /gracias/ reports no findings"
       }
     ]
   }

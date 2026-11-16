@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Steps from '../components/Steps.astro';
+import Numbers from '../components/Numbers.astro';
+import Machine from '../components/Machine.astro';
+import Places from '../components/Places.astro';
+import Faq from '../components/Faq.astro';
+import ContactForm from '../components/ContactForm.astro';
+import site from '../data/site.json';
+import content from '../data/content.json';
+---
+<Base title={`${site.brand} · Máquinas dispensadoras para conjuntos y empresas`} description={content.hero.lead}>
+  <main>
+    <Hero />
+    <Steps />
+    <Numbers />
+    <Machine />
+    <Places />
+    <Faq />
+    <ContactForm />
+  </main>
+</Base>

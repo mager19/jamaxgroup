@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist-ready/
+.astro/
+.vercel/
+.env*
+!.env.example
+.DS_Store
+# Raw media and the signed agreement (contains private data)
+docs/fotos-ia/
+docs/*.pdf
+docs/private-terms.txt

@@ -1,0 +1,63 @@
+---
+import Logo from './Logo.astro';
+
+const links = [
+  { href: '/#como-funciona', label: 'Cómo funciona' },
+  { href: '/#numeros', label: 'Los números' },
+  { href: '/#maquina', label: 'La máquina' },
+  { href: '/#preguntas', label: 'Preguntas' },
+];
+---
+<header class="site-header">
+  <div class="wrap bar">
+    <Logo />
+    <nav class="nav" aria-label="Principal">
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+    <div class="actions">
+      <a class="btn btn-primary btn-sm" href="/#contacto">Solicitar una máquina</a>
+      <details class="menu">
+        <summary aria-label="Abrir menú">Menú</summary>
+        <nav aria-label="Menú móvil">
+          {links.map((l) => <a href={l.href}>{l.label}</a>)}
+          <a href="/#contacto">Contacto</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Close the mobile menu after choosing a link.
+  document.querySelectorAll<HTMLAnchorElement>('.menu nav a').forEach((a) =>
+    a.addEventListener('click', () => a.closest('details')?.removeAttribute('open')),
+  );
+</script>
+
+<style>
+  .site-header {
+    position: sticky; top: 0; z-index: 30; background: rgb(255 255 255 / 0.92);
+    backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 72px; }
+  .nav { display: flex; gap: 28px; }
+  .nav a { text-decoration: none; font-weight: 600; font-size: 15px; }
+  .nav a:hover { text-decoration: underline; }
+  .actions { display: flex; align-items: center; gap: 10px; }
+  .btn-sm { min-height: 44px; padding: 0 20px; font-size: 15px; }
+  .menu { display: none; position: relative; }
+  .menu summary {
+    list-style: none; cursor: pointer; min-height: 44px; display: grid; place-items: center;
+    padding: 0 18px; border-radius: var(--pill); border: 2px solid var(--ink); font-weight: 700; font-size: 15px;
+  }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu[open] summary { background: var(--ink); color: var(--paper); }
+  .menu nav {
+    position: absolute; right: 0; top: calc(100% + 10px); min-width: 230px; display: grid; padding: 8px;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow);
+  }
+  .menu nav a { padding: 12px 14px; border-radius: 12px; text-decoration: none; font-weight: 700; }
+  .menu nav a:hover { background: var(--mist); }
+  @media (max-width: 960px) { .nav { display: none; } .menu { display: block; } }
+  @media (max-width: 520px) { .actions .btn { display: none; } }
+</style>

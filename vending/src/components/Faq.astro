@@ -1,0 +1,55 @@
+---
+import content from '../data/content.json';
+import { waLink } from '../lib/site';
+
+const wa = waLink('Hola, tengo una pregunta sobre las máquinas de Jamax Vending.');
+---
+<section id="preguntas" class="section bg-mist" aria-labelledby="faq-title">
+  <div class="wrap grid">
+    <div class="side">
+      <h2 id="faq-title" class="display h-lg">Preguntas</h2>
+      <p class="muted">¿No encuentra la suya? Escríbanos y le respondemos.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#contacto">Solicitar una máquina</a>
+        {wa && <a class="btn btn-ghost" href={wa} target="_blank" rel="noopener">Preguntar por WhatsApp</a>}
+      </div>
+    </div>
+    <div class="list">
+      {content.faq.map((f, i) => (
+        <details open={i === 0}>
+          <summary>{f.q}<span class="sign" aria-hidden="true"></span></summary>
+          <p class="muted">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(32px, 5vw, 80px); align-items: start; }
+  .grid > * { min-width: 0; }
+  .side { display: grid; gap: 22px; position: sticky; top: 96px; }
+  .side h2 { font-size: clamp(36px, 4.4vw, 60px); }
+  .ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+  .list { border-top: 1px solid var(--line); }
+  details { border-bottom: 1px solid var(--line); }
+  summary {
+    list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px;
+    padding: 22px 0; font-weight: 700; font-size: clamp(17px, 1.6vw, 20px);
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary:hover { color: var(--lime-ink); }
+  .sign { position: relative; flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--paper); border: 1px solid var(--line); }
+  .sign::before, .sign::after {
+    content: ''; position: absolute; left: 50%; top: 50%; width: 12px; height: 2px; background: var(--ink);
+    transform: translate(-50%, -50%); transition: transform 0.3s var(--ease-out);
+  }
+  .sign::after { transform: translate(-50%, -50%) rotate(90deg); }
+  details[open] .sign { background: var(--lime); border-color: var(--lime); }
+  details[open] .sign::after { transform: translate(-50%, -50%) rotate(0deg); }
+  details p { padding: 0 48px 24px 0; max-width: 64ch; }
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr; }
+    .side { position: static; }
+  }
+</style>

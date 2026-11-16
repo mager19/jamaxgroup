@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import content from '../data/content.json';
+import { mediaItem } from '../lib/media';
+
+const office = mediaItem('escenas/oficina.webp');
+const [homes, work] = content.places;
+---
+<section id="donde" class="section bg-paper" aria-labelledby="places-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="places-title" class="display h-lg">Donde hay gente, <span class="hl">hay ventas</span></h2>
+    </div>
+    <div class="places">
+      <article class="homes on-ink">
+        <h3 class="display h-md">{homes.title}</h3>
+        <p class="muted">{homes.text}</p>
+        <a class="btn btn-primary" href="#contacto">Solicitar para mi conjunto</a>
+      </article>
+      <article class="work">
+        <Image src={office.src} alt={office.alt} widths={[480, 760, 1024]} sizes="(max-width: 860px) 92vw, 600px" />
+        <div class="work-copy">
+          <h3 class="display h-md">{work.title}</h3>
+          <p class="muted">{work.text}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .places { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 20px; }
+  .places > * { min-width: 0; border-radius: var(--r-card); overflow: hidden; }
+  .homes { display: grid; gap: 20px; align-content: end; padding: clamp(28px, 4vw, 48px); min-height: 420px; }
+  .homes .btn { justify-self: start; }
+  .work { background: var(--mist); display: grid; }
+  .work :global(img) { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .work-copy { display: grid; gap: 12px; padding: clamp(24px, 3vw, 36px); }
+  @media (max-width: 860px) {
+    .places { grid-template-columns: 1fr; }
+    .homes { min-height: 0; }
+  }
+</style>

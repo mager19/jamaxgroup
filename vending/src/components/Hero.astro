@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import content from '../data/content.json';
+import { mediaItem } from '../lib/media';
+import { waLink } from '../lib/site';
+import WhatsAppIcon from './WhatsAppIcon.astro';
+
+const scene = mediaItem('escenas/porteria.webp');
+const wa = waLink();
+const [a, b, c] = content.hero.title;
+---
+<section id="inicio" class="hero on-ink" aria-labelledby="hero-title">
+  <div class="wrap grid">
+    <div class="copy">
+      <h1 id="hero-title" class="display h-xl">{a}<br />{b} <span class="hl">{c}</span></h1>
+      <p class="lead muted">{content.hero.lead}</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#contacto">Solicitar una máquina</a>
+        {wa && (
+          <a class="btn btn-ghost" href={wa} target="_blank" rel="noopener">
+            <WhatsAppIcon /> Escribir por WhatsApp
+          </a>
+        )}
+      </div>
+    </div>
+    <figure class="photo">
+      <Image src={scene.src} alt={scene.alt} widths={[480, 760, 1024]} sizes="(max-width: 960px) 92vw, 520px" loading="eager" fetchpriority="high" />
+    </figure>
+  </div>
+</section>
+
+<style>
+  .hero { padding-block: clamp(48px, 7vw, 96px) clamp(64px, 9vw, 120px); overflow: hidden; }
+  .grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+  .grid > * { min-width: 0; }
+  .copy { display: grid; gap: 30px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .photo { border-radius: var(--r-card); overflow: hidden; aspect-ratio: 4 / 5; }
+  .photo :global(img) {
+    width: 100%; height: 100%; object-fit: cover; object-position: 72% 50%;
+    animation: drift 14s var(--ease-out) infinite alternate;
+  }
+  @keyframes drift { from { transform: scale(1); } to { transform: scale(1.05); } }
+  @media (max-width: 960px) {
+    .grid { grid-template-columns: 1fr; }
+    .photo { aspect-ratio: 1 / 1; max-width: 560px; }
+  }
+  @media (max-width: 480px) { .ctas .btn { flex: 1 1 100%; } }
+</style>
