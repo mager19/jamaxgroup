@@ -1,6 +1,8 @@
 {
   "published": true,
   "order": 6,
+  "validUntil": "2027-06-20",
+  "urgent": false,
   "title": "Argentina 2027",
   "destination": "Buenos Aires y Patagonia",
   "origin": "Salida desde Bogotá",

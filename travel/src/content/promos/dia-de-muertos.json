@@ -1,6 +1,8 @@
 {
   "published": true,
   "order": 8,
+  "validUntil": "2026-10-30",
+  "urgent": false,
   "title": "Día de Muertos en México",
   "destination": "Ciudad de México",
   "origin": "Salida desde Bogotá",

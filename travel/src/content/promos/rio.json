@@ -1,6 +1,8 @@
 {
   "published": true,
   "order": 5,
+  "validUntil": "2026-12-28",
+  "urgent": false,
   "title": "Fin de año en Río de Janeiro",
   "destination": "Río de Janeiro, Brasil",
   "origin": "Salida desde Bogotá",

@@ -1,6 +1,8 @@
 {
   "published": true,
   "order": 2,
+  "validUntil": "2026-10-29",
+  "urgent": true,
   "title": "Santa Marta: sierra y mar",
   "destination": "Santa Marta, Colombia",
   "origin": "Salida desde Medellín",

@@ -32,7 +32,7 @@ const gallery = [p.images[1], p.images[3], p.images[0], p.images[2], p.images[4]
       <article>
         <div class="tags">
           <span class="tag">{p.category}</span>
-          <span class="tag tag-alert">{p.badge}</span>
+          <span class:list={['tag', { 'tag-alert': p.urgent }]}>{p.badge}</span>
           <span class="caption">{p.origin}</span>
         </div>
         <h1>{p.title}</h1>
@@ -53,7 +53,7 @@ const gallery = [p.images[1], p.images[3], p.images[0], p.images[2], p.images[4]
         )}
       </article>
       <aside class="side">
-        <span class="flag">● {p.badge}</span>
+        <span class="flag">{p.badge}</span>
         <div class="caption">Desde</div>
         <div class="big">{fmtCOP(p.priceFrom)} <small>COP</small></div>
         <div class="caption">{p.priceNote}</div>
@@ -71,7 +71,7 @@ const gallery = [p.images[1], p.images[3], p.images[0], p.images[2], p.images[4]
   {related.length > 0 && (
     <section class="section light" style="background:var(--linen)">
       <div class="wrap">
-        <div class="section-head"><h2>También te puede <span class="serif"><em>gustar</em></span></h2></div>
+        <div class="section-head"><h2>También te puede gustar</h2></div>
         <div class="grid">{related.map((r) => <PromoCard promo={r} />)}</div>
       </div>
     </section>

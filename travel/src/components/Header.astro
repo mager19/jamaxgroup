@@ -1,15 +1,19 @@
 ---
 import site from '../data/site.json';
-import { promoUrl, waLink } from '../lib/promos';
+import { getPromos, promoUrl, waLink } from '../lib/promos';
 import Logo from './Logo.astro';
 import WhatsAppIcon from './WhatsAppIcon.astro';
 
 const { announcement } = site;
+// The bar only shows while its promo is live, so it never announces an expired trip.
+const livePromos = await getPromos();
+const announcedPromo = livePromos.find((p) => p.id === announcement.promo);
+const showAnnouncement = Boolean(announcement.text) && (!announcement.promo || announcedPromo);
 ---
-{announcement.text && (
+{showAnnouncement && (
   <div class="announce">
     {announcement.text}
-    {announcement.promo && <a href={promoUrl(announcement.promo)}>{announcement.linkText}</a>}
+    {announcedPromo && <a href={promoUrl(announcedPromo)}>{announcement.linkText}</a>}
   </div>
 )}
 <div class="nav-shell">

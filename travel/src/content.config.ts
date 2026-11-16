@@ -8,6 +8,13 @@ const promos = defineCollection({
   schema: z.object({
     published: z.boolean().default(true),
     order: z.number().int().default(999),
+    // Last day the promo is offered (YYYY-MM-DD, Bogotá time). Omit for open-ended promos.
+    validUntil: z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}$/, 'Use the format YYYY-MM-DD, e.g. "2026-12-28".')
+      .optional(),
+    // True only when the operator flyer states real urgency (e.g. "Últimos cupos").
+    urgent: z.boolean().default(false),
     title: z.string().min(1),
     destination: z.string().min(1),
     origin: z.string().min(1),

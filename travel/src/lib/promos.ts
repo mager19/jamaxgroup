@@ -3,9 +3,18 @@ import site from '../data/site.json';
 
 export type Promo = CollectionEntry<'promos'>;
 
-/** Published promos, sorted by `order` then title. */
+/** Today's date as YYYY-MM-DD in Bogotá time (evaluated at build time). */
+export const todayInBogota = (): string =>
+  new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Bogota' }).format(new Date());
+
+/** A promo is live while it is published and its validUntil date has not passed. */
+export const isLive = (promo: Promo, today = todayInBogota()): boolean =>
+  promo.data.published && (!promo.data.validUntil || promo.data.validUntil >= today);
+
+/** Live promos, sorted by `order` then title. Expired promos get no page. */
 export async function getPromos(): Promise<Promo[]> {
-  const all = await getCollection('promos', ({ data }) => data.published);
+  const today = todayInBogota();
+  const all = await getCollection('promos', (entry) => isLive(entry, today));
   return all.sort((a, b) => a.data.order - b.data.order || a.data.title.localeCompare(b.data.title));
 }
 

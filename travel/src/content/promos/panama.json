@@ -1,6 +1,7 @@
 {
   "published": true,
   "order": 7,
+  "urgent": false,
   "title": "Ofertazo Panamá",
   "destination": "Ciudad de Panamá",
   "origin": "Salida desde Medellín",

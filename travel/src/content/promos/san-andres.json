@@ -1,6 +1,8 @@
 {
   "published": true,
   "order": 1,
+  "validUntil": "2026-10-29",
+  "urgent": true,
   "title": "San Andrés: mar de siete colores",
   "destination": "San Andrés, Colombia",
   "origin": "Salida desde Medellín",

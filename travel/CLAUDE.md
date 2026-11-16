@@ -31,17 +31,20 @@ Node: local is 22.20, so Astro is pinned to 7.3.8. Do not bump Astro unless Node
 ## Common tasks
 
 - **Add a promo:** copy an existing JSON in `src/content/promos/`, rename to the new slug (lowercase, hyphens, no accents), edit fields, keep ≥ 5 image URLs, run `npm run build`.
-- **Hide a promo:** set `"published": false` (and remove it from `site.json` announcement if referenced).
+- **Hide a promo:** set `"published": false`.
+- **Expiry:** set `"validUntil": "YYYY-MM-DD"` (last day offered). Expired promos vanish on the next build — redeploy after a promo expires.
+- **Urgency:** `"urgent": true` only when the operator flyer states it ("Últimos cupos") and the promo is still valid.
 - **Reorder:** change `order` (ascending).
-- **Change announcement / hero cards:** edit `site.json`.
+- **Change announcement:** edit `site.json` (it hides itself if its promo is not live). Hero floating cards come from the first 3 live promos by `order`.
 - **Add a field:** update the schema in `content.config.ts`, every promo JSON, the templates, and the content model table in `ARCHITECTURE.md`.
 
 ## Rules
 
-- Always fetch promos through `getPromos()` (filters unpublished, applies order). Never call `getCollection('promos')` directly in pages.
+- Always fetch promos through `getPromos()` (filters unpublished and expired promos, applies order). Never call `getCollection('promos')` directly in pages.
 - Build every WhatsApp link with `waLink()` and every promo URL with `promoUrl()`.
 - Use existing CSS classes and tokens; follow DESIGN.md (one filled CTA per viewport, blue on light / amber on dark, 999px pills, thin shadows).
-- **Never invent social proof** (fake reviews, booking counts, "X personas viendo"). Floating cards and badges show real promo facts only.
+- **Never invent social proof or liveness** (fake reviews, booking counts, "X personas viendo", "en línea" dots). Floating cards and badges show real promo facts only.
+- No emoji or Unicode glyphs as icons — use SVG. No decorative motion beyond the marquee. EB Garamond emphasis only in the hero h1 and the CTA band.
 - Prices only as "Desde $X COP" + note. Never add "Reservar", "Comprar", carts or payment flows.
 - Keep the legal lines (operator, RNT, reference-price and intermediary disclaimers) visible.
 - Site copy is Spanish (Colombia, "tú"). Code, identifiers, comments and docs are English.

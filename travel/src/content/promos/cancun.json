@@ -1,6 +1,8 @@
 {
   "published": true,
   "order": 4,
+  "validUntil": "2026-08-12",
+  "urgent": false,
   "title": "Caribe Mexicano salida garantizada",
   "destination": "Cancún, México",
   "origin": "Salida desde Bogotá",
