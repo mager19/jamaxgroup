@@ -1,0 +1,33 @@
+{
+  "published": true,
+  "order": 3,
+  "title": "Punta Cana todo incluido",
+  "destination": "Punta Cana, Rep. Dominicana",
+  "origin": "Salida desde Bogotá",
+  "nights": 5,
+  "category": "Caribe",
+  "badge": "Hot Sale",
+  "priceFrom": 4290000,
+  "priceNote": "por persona en acomodación doble",
+  "departure": "Salidas garantizadas",
+  "season": "Temporada de fin de año",
+  "hotel": "Resort RIU · Todo incluido",
+  "images": [
+    "https://images.unsplash.com/photo-1569700946659-fe1941c71fe4",
+    "https://images.unsplash.com/photo-1705507972578-78537a2dda73",
+    "https://images.unsplash.com/photo-1732153598980-a84667c256e7",
+    "https://images.unsplash.com/photo-1637576305711-23d3b0f72881",
+    "https://images.unsplash.com/photo-1569700946659-fe1941c71fe4"
+  ],
+  "summary": "Playas de arena blanca y resort todo incluido. Te ayudamos a escoger el hotel según tu plan.",
+  "includes": [
+    "Tiquete aéreo",
+    "Traslados aeropuerto – hotel",
+    "5 noches todo incluido",
+    "Asistencia médica"
+  ],
+  "excludes": [
+    "Excursiones opcionales",
+    "Propinas"
+  ]
+}

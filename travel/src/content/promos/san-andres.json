@@ -1,0 +1,36 @@
+{
+  "published": true,
+  "order": 1,
+  "title": "San Andrés: mar de siete colores",
+  "destination": "San Andrés, Colombia",
+  "origin": "Salida desde Medellín",
+  "nights": 3,
+  "category": "Nacional",
+  "badge": "Últimos cupos",
+  "priceFrom": 1499000,
+  "priceNote": "por persona en acomodación doble",
+  "departure": "29 oct – 01 nov",
+  "season": "Puente festivo de noviembre",
+  "hotel": "Hotel Portofino · Plan PA",
+  "images": [
+    "https://images.unsplash.com/photo-1592782985575-a96c6e647155",
+    "https://images.unsplash.com/photo-1715559501246-ffe8df3a8a5f",
+    "https://images.unsplash.com/photo-1700188223446-883d92810f38",
+    "https://images.unsplash.com/photo-1578600925345-fb0341f25289",
+    "https://images.unsplash.com/photo-1576540506067-67f451064d84"
+  ],
+  "summary": "Tres noches frente al Caribe colombiano con tiquete aéreo, alojamiento y alimentación incluidos. Ideal para el puente festivo.",
+  "includes": [
+    "Tiquete aéreo ida y regreso",
+    "Maleta de bodega de 23 kg",
+    "3 noches de alojamiento",
+    "Desayuno, almuerzo y cena (Plan PA)",
+    "Asistencia médica",
+    "Impuestos hoteleros"
+  ],
+  "excludes": [
+    "Traslados y almuerzo el día de viaje",
+    "Tarjeta de turismo (aprox. $136.000)",
+    "Gastos no especificados"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "published": true,
+  "order": 7,
+  "title": "Ofertazo Panamá",
+  "destination": "Ciudad de Panamá",
+  "origin": "Salida desde Medellín",
+  "nights": 3,
+  "category": "Centroamérica",
+  "badge": "Ofertazo",
+  "priceFrom": 1790000,
+  "priceNote": "por persona en acomodación doble",
+  "departure": "Salidas semanales",
+  "season": "Todo el año",
+  "hotel": "Hotel céntrico · Desayuno",
+  "images": [
+    "https://images.unsplash.com/photo-1632505702897-cc41b0ba3b64",
+    "https://images.unsplash.com/photo-1524544187526-2b2855b65f16",
+    "https://images.unsplash.com/photo-1668294633496-c8b9baae35c3",
+    "https://images.unsplash.com/photo-1639935187474-10940c5be350",
+    "https://images.unsplash.com/photo-1632505702897-cc41b0ba3b64"
+  ],
+  "summary": "Compras, Canal de Panamá y Casco Antiguo en una escapada corta.",
+  "includes": [
+    "Tiquete aéreo",
+    "3 noches con desayuno",
+    "Visita al Canal"
+  ],
+  "excludes": [
+    "Traslados",
+    "Gastos personales"
+  ]
+}

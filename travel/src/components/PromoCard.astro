@@ -1,0 +1,25 @@
+---
+import { fmtCOP, img, promoUrl, type Promo } from '../lib/promos';
+
+interface Props {
+  promo: Promo;
+}
+
+const { promo } = Astro.props;
+const p = promo.data;
+---
+<a class="card" href={promoUrl(promo)} data-category={p.category}>
+  <div class="card-media">
+    <img src={img(p.images[0], 800)} alt={p.destination} loading="lazy" />
+    <span class="chip chip-left">{p.nights} noches</span>
+    <span class="chip chip-right">{p.badge}</span>
+  </div>
+  <div class="card-body">
+    <h3>{p.title}</h3>
+    <p class="dest-line">{p.destination}</p>
+    <div class="price-box">
+      <div><span class="from">Desde</span><span class="price">{fmtCOP(p.priceFrom)} <small>COP</small></span></div>
+      <div class="season">Salida sugerida<b>{p.departure}</b></div>
+    </div>
+  </div>
+</a>

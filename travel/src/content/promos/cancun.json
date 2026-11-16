@@ -1,0 +1,33 @@
+{
+  "published": true,
+  "order": 4,
+  "title": "Caribe Mexicano salida garantizada",
+  "destination": "Cancún, México",
+  "origin": "Salida desde Bogotá",
+  "nights": 4,
+  "category": "Caribe",
+  "badge": "Salida garantizada",
+  "priceFrom": 3890000,
+  "priceNote": "por persona en acomodación doble",
+  "departure": "12 – 16 ago",
+  "season": "Vacaciones de mitad de año",
+  "hotel": "Varios hoteles · Todo incluido",
+  "images": [
+    "https://images.unsplash.com/photo-1630252421399-ddde79af47b3",
+    "https://images.unsplash.com/photo-1630252452598-56d592ceec50",
+    "https://images.unsplash.com/photo-1510097467424-192d713fd8b2",
+    "https://images.unsplash.com/photo-1568402102990-bc541580b59f",
+    "https://images.unsplash.com/photo-1630252421399-ddde79af47b3"
+  ],
+  "summary": "Cancún y Riviera Maya con varias opciones de hotel. Tú eliges el estilo y nosotros cotizamos.",
+  "includes": [
+    "Tiquete aéreo",
+    "Traslados",
+    "4 noches todo incluido",
+    "Asistencia médica"
+  ],
+  "excludes": [
+    "Tours a Xcaret o Chichén Itzá",
+    "Impuestos de salida"
+  ]
+}

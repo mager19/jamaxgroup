@@ -1,0 +1,33 @@
+{
+  "published": true,
+  "order": 2,
+  "title": "Santa Marta: sierra y mar",
+  "destination": "Santa Marta, Colombia",
+  "origin": "Salida desde Medellín",
+  "nights": 3,
+  "category": "Nacional",
+  "badge": "Últimos cupos",
+  "priceFrom": 929000,
+  "priceNote": "por persona en acomodación doble",
+  "departure": "29 oct – 01 nov",
+  "season": "Puente festivo de noviembre",
+  "hotel": "Hotel San Francisco · Plan PAM",
+  "images": [
+    "https://images.unsplash.com/photo-1649509906219-2f7ce71e938f",
+    "https://images.unsplash.com/photo-1604343403128-932fdf2a395b",
+    "https://images.unsplash.com/photo-1549027184-939b3b809970",
+    "https://images.unsplash.com/photo-1612869443604-7c3ad22bede4",
+    "https://images.unsplash.com/photo-1549025227-2fd0b499aaae"
+  ],
+  "summary": "Escápate al Caribe con la Sierra Nevada de fondo: tiquete, hotel y alimentación para un fin de semana largo.",
+  "includes": [
+    "Tiquete aéreo ida y regreso",
+    "3 noches de alojamiento",
+    "Desayuno y cena (Plan PAM)",
+    "Asistencia médica"
+  ],
+  "excludes": [
+    "Traslados",
+    "Tours no especificados"
+  ]
+}

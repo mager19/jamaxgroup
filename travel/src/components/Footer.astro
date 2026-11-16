@@ -1,0 +1,19 @@
+---
+import site from '../data/site.json';
+import { waLink } from '../lib/promos';
+import Logo from './Logo.astro';
+import WhatsAppIcon from './WhatsAppIcon.astro';
+---
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <Logo />
+      <p>Asesoría de viajes gratuita. Planes operados por {site.operator} · {site.rnt}.</p>
+    </div>
+    <div>
+      <p>Tarifas de referencia sujetas a disponibilidad y cambios sin previo aviso.</p>
+      <p>{site.brand} actúa como intermediario comercial; la reserva y el pago se realizan con el operador.</p>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" href={waLink()} target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><WhatsAppIcon /></a>

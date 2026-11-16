@@ -1,0 +1,34 @@
+# Shared ignores for every site in this repo.
+# Each site folder may add its own .gitignore for stack-specific files.
+
+# Dependencies
+node_modules/
+
+# Build output and framework caches
+dist/
+build/
+.astro/
+.next/
+.cache/
+
+# Vercel
+.vercel/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Tool caches
+**/.impeccable/*.cache.json

@@ -1,0 +1,117 @@
+---
+import Base from '../layouts/Base.astro';
+import PromoCard from '../components/PromoCard.astro';
+import WhatsAppIcon from '../components/WhatsAppIcon.astro';
+import site from '../data/site.json';
+import { getPromos, img, promoUrl, waLink } from '../lib/promos';
+
+const promos = await getPromos();
+const categories = ['Todas', ...new Set(promos.map((p) => p.data.category))];
+const destinations = promos.slice(0, 4);
+---
+<Base title={`${site.brand} — Promos de viaje con asesoría gratuita`}>
+  <main>
+    <section class="hero wrap">
+      <div class="badges">
+        <span class="badge"><span class="dot"></span> Asesores en línea por WhatsApp</span>
+        <span class="badge">✈ Operado por mayorista con RNT</span>
+      </div>
+      <h1>Deja de soñarlo. <span class="serif"><em>Empieza a empacar.</em></span></h1>
+      <p class="lead">Promos seleccionadas al Caribe, Suramérica y Colombia con salidas confirmadas. Escoge tu plan y un asesor te arma el viaje, sin costo.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-blue" href="#promos">Ver promos →</a>
+        <a class="btn btn-ghost" href={waLink()} target="_blank" rel="noopener">Hablar con un asesor</a>
+      </div>
+    </section>
+
+    <div class="stage">
+      {site.highlights.slice(0, 4).map((h, i) => (
+        <div class={`float-card fc-${i + 1} accent-${h.accent}`}>
+          <div class="ico">{h.icon}</div>
+          <div><strong>{h.title}</strong><span>{h.detail}</span></div>
+        </div>
+      ))}
+      <div class="strip">
+        <div class="strip-track">
+          {promos.map((p) => <img src={img(p.data.images[1], 700)} alt={p.data.destination} />)}
+          {promos.map((p) => <img src={img(p.data.images[1], 700)} alt="" aria-hidden="true" />)}
+        </div>
+      </div>
+    </div>
+
+    <section class="dark" id="promos">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Promos <span class="serif"><em>seleccionadas</em></span></h2>
+          <p>Precios de referencia por persona. Tu cotización final la recibes por WhatsApp.</p>
+        </div>
+        <div class="filters" id="filters" hidden>
+          {categories.map((c, i) => (
+            <button type="button" class:list={['filter', { active: i === 0 }]} data-cat={c} aria-pressed={i === 0 ? 'true' : 'false'}>{c}</button>
+          ))}
+        </div>
+        <div class="grid" id="grid">
+          {promos.map((promo) => <PromoCard promo={promo} />)}
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="como-funciona" style="padding-top:24px">
+      <div class="wrap">
+        <div class="section-head"><h2>Así de fácil</h2></div>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><h3>Elige tu promo</h3><p>Explora destinos y temporadas. Cada plan muestra qué incluye y desde cuánto.</p></div>
+          <div class="step"><div class="num">2</div><h3>Escríbenos</h3><p>Toca "Cotizar gratis" y llegas a WhatsApp con la promo ya identificada.</p></div>
+          <div class="step"><div class="num">3</div><h3>Viaja tranquilo</h3><p>Un asesor confirma fechas y precio final, y te acompaña hasta el regreso.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="destinos">
+      <div class="section-head"><h2>¿A dónde <span class="serif"><em>quieres ir?</em></span></h2></div>
+      <div class="dest">
+        {destinations.map((p) => (
+          <a href={promoUrl(p)}>
+            <img src={img(p.data.images[2], 600)} alt={p.data.destination} loading="lazy" />
+            <span>{p.data.destination.split(',')[0]}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="dark cta">
+      <div class="wrap">
+        <div class="section-head" style="margin-bottom:0">
+          <h2>¿No ves tu destino?<br /><span class="serif"><em>Te lo cotizamos.</em></span></h2>
+          <p>Cuéntanos a dónde, cuándo y con quién. La asesoría es gratuita.</p>
+        </div>
+        <div class="hero-ctas">
+          <a class="btn btn-amber" href={waLink()} target="_blank" rel="noopener"><WhatsAppIcon /> Escríbenos por WhatsApp</a>
+          <a class="btn btn-ghost-dark" href="#promos">Ver promos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>
+
+<script>
+  // Category filter: progressive enhancement. Without JS all promos stay visible.
+  const filters = document.getElementById('filters');
+  const cards = document.querySelectorAll<HTMLElement>('#grid .card');
+  if (filters) {
+    filters.hidden = false;
+    filters.addEventListener('click', (event) => {
+      const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-cat]');
+      if (!button) return;
+      const cat = button.dataset.cat;
+      filters.querySelectorAll<HTMLButtonElement>('[data-cat]').forEach((b) => {
+        const active = b === button;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-pressed', String(active));
+      });
+      cards.forEach((card) => {
+        card.hidden = cat !== 'Todas' && card.dataset.category !== cat;
+      });
+    });
+  }
+</script>

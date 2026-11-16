@@ -1,0 +1,33 @@
+{
+  "published": true,
+  "order": 5,
+  "title": "Fin de año en Río de Janeiro",
+  "destination": "Río de Janeiro, Brasil",
+  "origin": "Salida desde Bogotá",
+  "nights": 6,
+  "category": "Suramérica",
+  "badge": "Fin de año",
+  "priceFrom": 5150000,
+  "priceNote": "por persona en acomodación doble",
+  "departure": "28 dic – 03 ene",
+  "season": "Fin de año",
+  "hotel": "Hotel en Copacabana · Desayuno",
+  "images": [
+    "https://images.unsplash.com/photo-1483729558449-99ef09a8c325",
+    "https://images.unsplash.com/photo-1518639192441-8fce0a366e2e",
+    "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f",
+    "https://images.unsplash.com/photo-1626568941852-70bc179e493e",
+    "https://images.unsplash.com/photo-1483729558449-99ef09a8c325"
+  ],
+  "summary": "Recibe el año nuevo vestido de blanco en Copacabana, con Cristo Redentor y Pan de Azúcar en el itinerario.",
+  "includes": [
+    "Tiquete aéreo",
+    "Traslados",
+    "6 noches con desayuno",
+    "City tour"
+  ],
+  "excludes": [
+    "Cena de fin de año",
+    "Gastos personales"
+  ]
+}

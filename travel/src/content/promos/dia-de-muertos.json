@@ -1,0 +1,32 @@
+{
+  "published": true,
+  "order": 8,
+  "title": "Día de Muertos en México",
+  "destination": "Ciudad de México",
+  "origin": "Salida desde Bogotá",
+  "nights": 5,
+  "category": "Temporada",
+  "badge": "Temporada",
+  "priceFrom": 3350000,
+  "priceNote": "por persona en acomodación doble",
+  "departure": "30 oct – 04 nov",
+  "season": "Día de Muertos",
+  "hotel": "Hotel en Centro Histórico",
+  "images": [
+    "https://images.unsplash.com/photo-1585464231875-d9ef1f5ad396",
+    "https://images.unsplash.com/photo-1547686669-9a8cb1a22d91",
+    "https://images.unsplash.com/photo-1682916114863-ba2f7b7d39c9",
+    "https://images.unsplash.com/photo-1580934738416-ad531f2920f7",
+    "https://images.unsplash.com/photo-1585464231875-d9ef1f5ad396"
+  ],
+  "summary": "Vive la tradición más colorida de México: altares, desfiles y gastronomía en la capital.",
+  "includes": [
+    "Tiquete aéreo",
+    "5 noches con desayuno",
+    "City tour"
+  ],
+  "excludes": [
+    "Excursiones a Teotihuacán",
+    "Almuerzos y cenas"
+  ]
+}

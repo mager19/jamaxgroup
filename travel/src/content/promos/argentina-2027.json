@@ -1,0 +1,33 @@
+{
+  "published": true,
+  "order": 6,
+  "title": "Argentina 2027",
+  "destination": "Buenos Aires y Patagonia",
+  "origin": "Salida desde Bogotá",
+  "nights": 7,
+  "category": "Suramérica",
+  "badge": "Salida garantizada",
+  "priceFrom": 6490000,
+  "priceNote": "por persona en acomodación doble",
+  "departure": "20 – 27 jun 2027",
+  "season": "Mitad de año 2027",
+  "hotel": "Hoteles 4★ · Desayuno",
+  "images": [
+    "https://images.unsplash.com/photo-1558517286-8a9cb0b8c793",
+    "https://images.unsplash.com/photo-1637580980556-085dee659c7e",
+    "https://images.unsplash.com/photo-1546569397-ab326af881f5",
+    "https://images.unsplash.com/photo-1557543878-042c9857f39e",
+    "https://images.unsplash.com/photo-1558517286-8a9cb0b8c793"
+  ],
+  "summary": "Tango en Buenos Aires y glaciares en la Patagonia en un solo viaje con salida garantizada.",
+  "includes": [
+    "Tiquetes aéreos",
+    "7 noches con desayuno",
+    "Excursiones principales",
+    "Asistencia médica"
+  ],
+  "excludes": [
+    "Almuerzos y cenas",
+    "Propinas"
+  ]
+}

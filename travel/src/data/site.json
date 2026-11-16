@@ -1,0 +1,17 @@
+{
+  "brand": "JamaxTravel",
+  "whatsapp": "573000000000",
+  "operator": "Start Travel Mayorista",
+  "rnt": "RNT MDE 6497 y 202317",
+  "announcement": {
+    "text": "🔥 Últimos cupos para San Andrés y Santa Marta en el puente de noviembre",
+    "linkText": "Ver promo →",
+    "promo": "san-andres"
+  },
+  "highlights": [
+    { "icon": "🔥", "title": "Últimos cupos · San Andrés", "detail": "Desde $1.499.000 · 29 oct – 01 nov", "accent": "red" },
+    { "icon": "✈", "title": "Salida garantizada a Cancún", "detail": "12 – 16 ago · todo incluido", "accent": "amber" },
+    { "icon": "💬", "title": "Cotiza gratis por WhatsApp", "detail": "Un asesor te responde personalmente", "accent": "blue" },
+    { "icon": "🎆", "title": "Fin de año en Río", "detail": "28 dic – 03 ene · Copacabana", "accent": "amber" }
+  ]
+}

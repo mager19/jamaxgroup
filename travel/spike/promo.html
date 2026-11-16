@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promo — JamaxTravel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,700;1,700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="header"></div>
+  <main class="wrap" id="main"></main>
+  <section class="section light" style="background:var(--linen)">
+    <div class="wrap">
+      <div class="section-head"><h2>También te puede <span class="serif"><em>gustar</em></span></h2></div>
+      <div class="grid" id="related"></div>
+    </div>
+  </section>
+  <div id="footer"></div>
+
+  <script src="data.js"></script>
+  <script>
+    document.getElementById("header").outerHTML = headerHTML();
+    document.getElementById("footer").outerHTML = footerHTML();
+
+    const slug = new URLSearchParams(location.search).get("slug") || PROMOS[0].slug;
+    const p = PROMOS.find((x) => x.slug === slug) || PROMOS[0];
+    document.title = `${p.title} — JamaxTravel`;
+
+    document.getElementById("main").innerHTML = `
+      <div class="gallery">
+        ${[p.images[1], p.images[3], p.images[0], p.images[2], p.images[4]].map((id) => `<img src="${img(id, 1000)}" alt="${p.destination}">`).join("")}
+      </div>
+      <div class="detail">
+        <article>
+          <div class="tags"><span class="tag">${p.category}</span><span class="tag tag-alert">${p.badge}</span><span class="caption">${p.origin}</span></div>
+          <h1>${p.title}</h1>
+          <p class="intro">${p.summary}</p>
+          <div class="facts">
+            <div class="fact"><span class="caption">Duración</span><strong>${p.nights} noches</strong></div>
+            <div class="fact"><span class="caption">Destino</span><strong>${p.destination}</strong></div>
+            <div class="fact"><span class="caption">Alojamiento</span><strong>${p.hotel}</strong></div>
+            <div class="fact"><span class="caption">Temporada</span><strong>${p.season}</strong></div>
+          </div>
+          <h2>Qué incluye</h2>
+          <ul class="list-box">${p.includes.map((i) => `<li>${i}</li>`).join("")}</ul>
+          <h2>No incluye</h2>
+          <ul class="list-box no">${p.excludes.map((i) => `<li>${i}</li>`).join("")}</ul>
+        </article>
+        <aside class="side">
+          <span class="flag">● ${p.badge}</span>
+          <div class="caption">Desde</div>
+          <div class="big">${fmtCOP(p.priceFrom)} <small>COP</small></div>
+          <div class="caption">${p.priceNote}</div>
+          <div class="rows">
+            <div class="row"><span>Salida sugerida</span><strong>${p.departure}</strong></div>
+            <div class="row"><span>Temporada</span><strong>${p.season}</strong></div>
+            <div class="row"><span>Duración</span><strong>${p.nights} noches</strong></div>
+          </div>
+          <a class="btn btn-blue btn-block" href="${waLink(p)}" target="_blank" rel="noopener">${WA_ICON} Cotizar gratis por WhatsApp</a>
+          <p class="free">Asesoría personalizada y sin costo</p>
+          <p class="disclaimer">Tarifa de referencia sujeta a disponibilidad. Operado por ${SITE.operator} · ${SITE.rnt}.</p>
+        </aside>
+      </div>`;
+
+    document.getElementById("related").innerHTML = PROMOS.filter((x) => x.slug !== p.slug).slice(0, 3).map(cardHTML).join("");
+  </script>
+</body>
+</html>

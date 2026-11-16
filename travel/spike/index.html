@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JamaxTravel — Promos de viaje con asesoría gratuita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,700;1,700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <main>
+    <section class="hero wrap">
+      <div class="badges">
+        <span class="badge"><span class="dot"></span> Asesores en línea por WhatsApp</span>
+        <span class="badge">✈ Operado por mayorista con RNT</span>
+      </div>
+      <h1>Deja de soñarlo. <span class="serif"><em>Empieza a empacar.</em></span></h1>
+      <p class="lead">Promos seleccionadas al Caribe, Suramérica y Colombia con salidas confirmadas. Escoge tu plan y un asesor te arma el viaje, sin costo.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-blue" href="#promos">Ver promos →</a>
+        <a class="btn btn-ghost" id="hero-wa" target="_blank" rel="noopener">Hablar con un asesor</a>
+      </div>
+    </section>
+
+    <div class="stage">
+      <div class="float-card fc-1"><div class="ico">🔥</div><div><strong>Últimos cupos · San Andrés</strong><span>Desde $1.499.000 · 29 oct – 01 nov</span></div></div>
+      <div class="float-card fc-2"><div class="ico">✈</div><div><strong>Salida garantizada a Cancún</strong><span>12 – 16 ago · todo incluido</span></div></div>
+      <div class="float-card fc-3"><div class="ico">💬</div><div><strong>Cotiza gratis por WhatsApp</strong><span>Un asesor te responde personalmente</span></div></div>
+      <div class="float-card fc-4"><div class="ico">🎆</div><div><strong>Fin de año en Río</strong><span>28 dic – 03 ene · Copacabana</span></div></div>
+      <div class="strip" id="strip"></div>
+    </div>
+
+    <section class="dark" id="promos">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Promos <span class="serif"><em>seleccionadas</em></span></h2>
+          <p>Precios de referencia por persona. Tu cotización final la recibes por WhatsApp.</p>
+        </div>
+        <div class="filters" id="filters"></div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <section class="dark" id="como-funciona" style="padding-top:24px">
+      <div class="wrap">
+        <div class="section-head"><h2>Así de fácil</h2></div>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><h3>Elige tu promo</h3><p>Explora destinos y temporadas. Cada plan muestra qué incluye y desde cuánto.</p></div>
+          <div class="step"><div class="num">2</div><h3>Escríbenos</h3><p>Toca "Cotizar gratis" y llegas a WhatsApp con la promo ya identificada.</p></div>
+          <div class="step"><div class="num">3</div><h3>Viaja tranquilo</h3><p>Un asesor confirma fechas y precio final, y te acompaña hasta el regreso.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="destinos">
+      <div class="section-head"><h2>¿A dónde <span class="serif"><em>quieres ir?</em></span></h2></div>
+      <div class="dest" id="dest"></div>
+    </section>
+
+    <section class="dark cta">
+      <div class="wrap">
+        <div class="section-head" style="margin-bottom:0">
+          <h2>¿No ves tu destino?<br><span class="serif"><em>Te lo cotizamos.</em></span></h2>
+          <p>Cuéntanos a dónde, cuándo y con quién. La asesoría es gratuita.</p>
+        </div>
+        <div class="hero-ctas">
+          <a class="btn btn-amber" id="cta-wa" target="_blank" rel="noopener"></a>
+          <a class="btn btn-ghost-dark" href="#promos">Ver promos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="data.js"></script>
+  <script>
+    document.getElementById("header").outerHTML = headerHTML();
+    document.getElementById("footer").outerHTML = footerHTML();
+    document.getElementById("hero-wa").href = waLink();
+    const cta = document.getElementById("cta-wa");
+    cta.href = waLink();
+    cta.innerHTML = `${WA_ICON} Escríbenos por WhatsApp`;
+
+    // Duplicated set so the marquee loops seamlessly (translateX -50%)
+    const stripImgs = PROMOS.map((p) => `<img src="${img(p.images[1], 700)}" alt="${p.destination}">`).join("");
+    const stripDupe = PROMOS.map((p) => `<img src="${img(p.images[1], 700)}" alt="" aria-hidden="true">`).join("");
+    document.getElementById("strip").innerHTML = `<div class="strip-track">${stripImgs}${stripDupe}</div>`;
+
+    const cats = ["Todas", ...new Set(PROMOS.map((p) => p.category))];
+    const grid = document.getElementById("grid");
+    const filters = document.getElementById("filters");
+    const render = (cat) => {
+      grid.innerHTML = PROMOS.filter((p) => cat === "Todas" || p.category === cat).map(cardHTML).join("");
+      filters.innerHTML = cats.map((c) => `<button class="filter ${c === cat ? "active" : ""}" data-cat="${c}">${c}</button>`).join("");
+    };
+    filters.addEventListener("click", (e) => { if (e.target.dataset.cat) render(e.target.dataset.cat); });
+    render("Todas");
+
+    document.getElementById("dest").innerHTML = PROMOS.slice(0, 4)
+      .map((p) => `<a href="promo.html?slug=${p.slug}"><img src="${img(p.images[2], 600)}" alt="${p.destination}"><span>${p.destination.split(",")[0]}</span></a>`).join("");
+  </script>
+</body>
+</html>
