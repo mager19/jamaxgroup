@@ -32,3 +32,6 @@ Thumbs.db
 
 # Tool caches
 **/.impeccable/*.cache.json
+
+# Local agent tooling (generated per machine)
+.atl/
