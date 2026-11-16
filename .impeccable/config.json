@@ -47,6 +47,33 @@
         ],
         "createdAt": "2026-11-16T17:33:21.716Z",
         "reason": "Inter is the kiosk app's typeface required by kiosko/docs/BRIEF.md §7"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "kiosko/dist*/**"
+        ],
+        "createdAt": "2026-11-16T18:30:51.191Z",
+        "reason": "Build output; only hit is the coral 'Snap' of the FotoSnap logotype (logotypes exempt from WCAG 1.4.3)"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "kiosko/dist*/**"
+        ],
+        "createdAt": "2026-11-16T18:30:51.222Z",
+        "reason": "Build output; #fff9f0 canvas sampled from the owner's branding PDF, chosen by the owner"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "kiosko/dist*/**"
+        ],
+        "createdAt": "2026-11-16T18:30:51.250Z",
+        "reason": "Build output; only hit is the wordmark underline from the owner's branding PDF"
       }
     ]
   }
